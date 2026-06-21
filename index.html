@@ -1021,11 +1021,34 @@
 
       .category-grid { grid-template-columns: repeat(2, 1fr); }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
+
+      /* Collapse every multi-column layout in panels to a single column so
+         form fields and cards stop getting squeezed side-by-side. */
+      .content [style*="grid-template-columns"],
+      .settings-grid,
+      .trends-grid,
+      .fact-checker-grid,
+      .keywords-row {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Roomier cards and inputs for touch */
+      .settings-card { padding: 18px !important; }
+      .form-input, .form-select { padding: 12px 14px; font-size: 15px; }
+      .detect-controls .btn,
+      .detect-controls .btn-lg { width: 100%; justify-content: center; }
+      .detect-controls { gap: 10px !important; }
+      .page-description { font-size: 13.5px; }
+
+      /* Stack the carousel preview modal vertically */
+      #ig-carousel-modal > div { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 480px) {
       .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
       .nav-title { font-size: 15px; }
+      .content { padding: 18px 14px; }
     }
 
     .word-count {
