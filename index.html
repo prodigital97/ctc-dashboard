@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
   <title>Classy Travel Couples — Trend Intelligence Engine</title>
   <meta name="description" content="Real-time travel trend detection and AI-powered blog + social content generation for classytravelcouples.com">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="CTC Engine">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -986,14 +990,64 @@
       flex-wrap: wrap;
     }
 
+    /* ─── MOBILE BOTTOM TAB BAR (app-style) ─────────────── */
+    .bottom-nav { display: none; }
+
+    @media (max-width: 900px) {
+      .bottom-nav {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 88;
+        background: rgba(14, 14, 20, 0.92);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        border-top: 1px solid var(--border);
+        padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px));
+      }
+      .bottom-nav-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 6px 2px;
+        border-radius: 12px;
+        cursor: pointer;
+        color: var(--text-muted);
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        transition: color 0.15s, background 0.15s;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .bottom-nav-item .bn-icon { font-size: 20px; line-height: 1; transition: transform 0.15s; }
+      .bottom-nav-item.active { color: var(--accent); }
+      .bottom-nav-item.active .bn-icon { transform: translateY(-1px) scale(1.08); }
+      .bottom-nav-item:active { background: var(--bg-card); }
+    }
+
     /* ─── RESPONSIVE ────────────────────────────────────── */
     @media (max-width: 900px) {
-      .nav { padding: 0 16px; }
-      .nav-hamburger { display: flex; }
+      .nav {
+        padding: 0 14px;
+        height: 56px;
+        padding-top: env(safe-area-inset-top, 0px);
+        height: calc(56px + env(safe-area-inset-top, 0px));
+      }
+      .nav-hamburger { display: flex; margin-right: 10px; }
       .nav-subtitle { display: none; }
       .nav-title { font-size: 16px; }
+      .nav-logo { width: 32px; height: 32px; font-size: 16px; }
+      /* Compact the live badge to a dot only on mobile to save space */
+      .badge-live { padding: 5px; gap: 0; }
+      .badge-live span:not(.dot) { display: none; }
+      .nav-actions .btn-secondary { padding: 7px 10px; }
 
-      .main { grid-template-columns: 1fr; }
+      .main { grid-template-columns: 1fr; min-height: 0; }
 
       /* Sidebar becomes an off-canvas drawer */
       .sidebar {
@@ -1001,26 +1055,37 @@
         top: 0;
         left: 0;
         bottom: 0;
-        width: 270px;
-        max-width: 82vw;
+        width: 280px;
+        max-width: 84vw;
         z-index: 95;
-        padding-top: 20px;
+        padding: calc(20px + env(safe-area-inset-top, 0px)) 14px 20px;
         overflow-y: auto;
         transform: translateX(-100%);
-        transition: transform 0.25s ease;
-        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+        transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 8px 0 40px rgba(0, 0, 0, 0.55);
       }
       .sidebar.open { transform: translateX(0); }
+      .sidebar-item { padding: 13px 14px; font-size: 15px; }
 
-      .content { padding: 20px 16px; }
+      /* Leave room for the bottom tab bar */
+      .content {
+        padding: 18px 16px;
+        padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+      }
 
       /* Stack page header so the action button never overlaps the title */
-      .page-header { flex-direction: column; align-items: stretch; gap: 16px; }
-      .page-header .btn { width: 100%; justify-content: center; }
-      .page-title { font-size: 23px; }
+      .page-header { flex-direction: column; align-items: stretch; gap: 14px; margin-bottom: 22px; }
+      .page-header .btn { width: 100%; justify-content: center; padding: 13px 20px; }
+      .page-title { font-size: 24px; letter-spacing: -0.5px; }
+      .page-description { font-size: 13.5px; }
 
       .category-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+
+      /* App-style stat tiles */
+      .stat-card { padding: 16px; border-radius: 16px; }
+      .stat-value { font-size: 28px; }
+      .stat-icon { top: 14px; right: 14px; font-size: 20px; opacity: 0.6; }
 
       /* Collapse every multi-column layout in panels to a single column so
          form fields and cards stop getting squeezed side-by-side. */
@@ -1033,22 +1098,31 @@
       }
 
       /* Roomier cards and inputs for touch */
-      .settings-card { padding: 18px !important; }
-      .form-input, .form-select { padding: 12px 14px; font-size: 15px; }
+      .settings-card { padding: 18px !important; border-radius: 16px; }
+      .form-input, .form-select { padding: 13px 14px; font-size: 16px; border-radius: 10px; }
       .detect-controls .btn,
       .detect-controls .btn-lg { width: 100%; justify-content: center; }
       .detect-controls { gap: 10px !important; }
-      .page-description { font-size: 13.5px; }
+      .cat-chip { padding: 14px 12px; border-radius: 12px; }
 
-      /* Stack the carousel preview modal vertically */
-      #ig-carousel-modal > div { grid-template-columns: 1fr !important; }
+      /* Modal fills the screen like a mobile sheet */
+      #ig-carousel-modal { padding: 0 !important; }
+      #ig-carousel-modal > div {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+        max-height: 100vh !important;
+        height: 100vh;
+        border-radius: 0 !important;
+        overflow-y: auto !important;
+      }
     }
 
     @media (max-width: 480px) {
-      .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stats-row { grid-template-columns: 1fr 1fr; gap: 10px; }
       .category-grid { grid-template-columns: 1fr 1fr; }
       .nav-title { font-size: 15px; }
-      .content { padding: 18px 14px; }
+      .content { padding: 16px 14px; padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
+      .page-title { font-size: 22px; }
     }
 
     .word-count {
@@ -1817,6 +1891,25 @@
   </main>
 </div>
 
+<!-- Mobile bottom tab bar (app-style navigation) -->
+<nav class="bottom-nav" id="bottom-nav">
+  <div class="bottom-nav-item active" id="bnav-dashboard" onclick="showPanel('dashboard')">
+    <span class="bn-icon">🏠</span><span>Home</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-detect" onclick="showPanel('detect')">
+    <span class="bn-icon">📡</span><span>Trends</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-generate" onclick="showPanel('generate')">
+    <span class="bn-icon">✍️</span><span>Write</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-ig-trends" onclick="showPanel('ig-trends')">
+    <span class="bn-icon">📸</span><span>Social</span>
+  </div>
+  <div class="bottom-nav-item" id="bnav-more" onclick="toggleSidebar()">
+    <span class="bn-icon">☰</span><span>More</span>
+  </div>
+</nav>
+
 <!-- Loading Overlay -->
 <div class="loading-overlay" id="loading-overlay">
   <div class="loading-spinner"></div>
@@ -2115,6 +2208,17 @@ function showPanel(id) {
   document.getElementById(`panel-${id}`).classList.add('active');
   const navEl = document.getElementById(`nav-${id}`);
   if (navEl) navEl.classList.add('active');
+
+  // Sync mobile bottom tab bar (highlight "More" for secondary panels)
+  document.querySelectorAll('.bottom-nav-item').forEach(i => i.classList.remove('active'));
+  const primaryTabs = ['dashboard', 'detect', 'generate', 'ig-trends'];
+  const bnav = document.getElementById(primaryTabs.includes(id) ? `bnav-${id}` : 'bnav-more');
+  if (bnav) bnav.classList.add('active');
+
+  // Scroll content to top on panel change for an app-like feel
+  const contentEl = document.querySelector('.content');
+  if (contentEl) contentEl.scrollTop = 0;
+  window.scrollTo(0, 0);
   if (id === 'history') renderHistory();
   if (id === 'ig-history') renderIgHistory();
   if (id === 'ig-trends') renderIgCarousels();
