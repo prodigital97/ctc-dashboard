@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Classy Travel Couples</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: rgba(22, 22, 31, 0.65);
+      --border: rgba(42, 42, 58, 0.6);
+      --accent: #ff6b6b; /* Coral/red */
+      --accent2: #4ecdc4; /* Teal */
+      --accent-glow: rgba(255, 107, 107, 0.15);
+      --text-primary: #f0f0f8;
+      --text-secondary: #8888aa;
+      --text-muted: #555570;
+      --error: #ff5f6d;
+      --warning: #f5a623;
+      --success: #22d37b;
+      --radius: 16px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 50%, #151522 0%, var(--bg-primary) 70%);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Ambient glow elements */
+    .glow-1 {
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 300px;
+      height: 300px;
+      background: var(--accent);
+      filter: blur(150px);
+      opacity: 0.08;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .glow-2 {
+      position: absolute;
+      bottom: 20%;
+      right: 20%;
+      width: 350px;
+      height: 350px;
+      background: var(--accent2);
+      filter: blur(180px);
+      opacity: 0.08;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .login-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border);
+      width: 100%;
+      max-width: 420px;
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      z-index: 10;
+      animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo-box {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 16px rgba(255, 107, 107, 0.25);
+    }
+
+    .logo-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      background: linear-gradient(to right, #ffffff, #dcdcf0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-subtitle {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .form-input {
+      width: 100%;
+      background: rgba(10, 10, 15, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 44px 14px 16px;
+      color: var(--text-primary);
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent);
+      background: rgba(10, 10, 15, 0.8);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.15s ease;
+      padding: 4px;
+    }
+
+    .toggle-password:hover {
+      color: var(--text-primary);
+    }
+
+    .toggle-password svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .btn-login {
+      width: 100%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      color: white;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+    }
+
+    .btn-login:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    .btn-login:disabled {
+      background: var(--text-muted);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .alert {
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      display: none;
+      animation: slideDown 0.3s ease forwards;
+    }
+
+    .alert-error {
+      background: rgba(255, 95, 109, 0.1);
+      border: 1px solid rgba(255, 95, 109, 0.25);
+      color: var(--error);
+    }
+
+    .alert-warning {
+      background: rgba(245, 166, 35, 0.08);
+      border: 1px solid rgba(245, 166, 35, 0.2);
+      color: var(--warning);
+      display: flex;
+      gap: 8px;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 32px;
+    }
+
+    .footer-text a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-text a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+
+  <div class="login-card">
+    <div class="logo-container">
+      <div class="logo-box">⛵</div>
+      <h1 class="logo-title">Classy Travel Couples</h1>
+      <p class="logo-subtitle">Trend Intelligence Engine</p>
+    </div>
+
+    <div id="warning-box" class="alert alert-warning">
+      <span style="font-size: 16px; line-height: 1;">⚠️</span>
+      <div>
+        Running on default password <strong>classy2026</strong>. Add <code>DASHBOARD_PASSWORD</code> in your <code>.env</code> file to change it.
+      </div>
+    </div>
+
+    <div id="error-box" class="alert alert-error"></div>
+
+    <form id="login-form" onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label class="form-label" for="password-input">Dashboard Password</label>
+        <div class="input-wrapper">
+          <input type="password" id="password-input" class="form-input" placeholder="Enter password" required autofocus autocomplete="current-password">
+          <button type="button" class="toggle-password" id="toggle-password-btn" onclick="togglePasswordVisibility()" aria-label="Toggle password visibility">
+            <svg id="eye-icon" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" id="submit-btn" class="btn-login">
+        <span>Sign In</span>
+        <div class="spinner" id="btn-spinner"></div>
+      </button>
+    </form>
+
+    <div class="footer-text">
+      Secure session protected &bull; <a href="https://classytravelcouples.com" target="_blank" rel="noopener">classytravelcouples.com</a>
+    </div>
+  </div>
+
+  <script>
+    // Check if server is running on default credentials on page load
+    async function checkDefaultPassword() {
+      try {
+        const res = await fetch('/api/login-status');
+        if (res.ok) {
+          const data = await res.json();
+          if (data.isDefaultPassword) {
+            document.getElementById('warning-box').style.display = 'flex';
+          }
+        }
+      } catch (err) {
+        console.error('Failed to query login status:', err);
+      }
+    }
+    
+    checkDefaultPassword();
+
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password-input');
+      const toggleBtn = document.getElementById('toggle-password-btn');
+      const eyeIcon = document.getElementById('eye-icon');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        // Eye off icon
+        eyeIcon.innerHTML = `
+          <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+          <line x1="1" y1="1" x2="23" y2="23"></line>
+        `;
+      } else {
+        passwordInput.type = 'password';
+        // Eye icon
+        eyeIcon.innerHTML = `
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        `;
+      }
+    }
+
+    async function handleLogin(e) {
+      e.preventDefault();
+      
+      const passwordInput = document.getElementById('password-input');
+      const submitBtn = document.getElementById('submit-btn');
+      const spinner = document.getElementById('btn-spinner');
+      const errorBox = document.getElementById('error-box');
+      
+      const password = passwordInput.value;
+      
+      // Reset status
+      errorBox.style.display = 'none';
+      errorBox.textContent = '';
+      submitBtn.disabled = true;
+      spinner.style.display = 'block';
+      
+      try {
+        const response = await fetch('/api/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ password })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok && data.success) {
+          // Redirect to dashboard (root path)
+          window.location.href = '/';
+        } else {
+          errorBox.textContent = data.error || 'Invalid password. Please try again.';
+          errorBox.style.display = 'block';
+          passwordInput.focus();
+        }
+      } catch (err) {
+        errorBox.textContent = 'Server communication error. Please try again later.';
+        errorBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

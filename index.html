@@ -1030,6 +1030,11 @@
     <div class="sidebar-item" id="nav-settings" onclick="showPanel('settings')">
       <span class="icon">⚙️</span> Settings
     </div>
+    <div style="margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border-subtle);">
+      <div class="sidebar-item" onclick="handleLogout()" style="color: var(--error); margin: 0;">
+        <span class="icon">🚪</span> Logout
+      </div>
+    </div>
   </aside>
 
   <!-- Content -->
@@ -1814,6 +1819,19 @@
 </div>
 
 <script>
+// ─── GLOBAL FETCH INTERCEPTOR FOR AUTHENTICATION ───────────────
+const originalFetch = window.fetch;
+window.fetch = async function(...args) {
+  const response = await originalFetch(...args);
+  const url = typeof args[0] === 'string' ? args[0] : (args[0] instanceof Request ? args[0].url : '');
+  
+  if (response.status === 401 && url.includes('/api/') && !url.includes('/api/login') && !url.includes('/api/login-status')) {
+    console.warn('Session expired or unauthorized. Redirecting to login...');
+    window.location.href = '/login';
+  }
+  return response;
+};
+
 // ─── STATE ─────────────────────────────────────────────────
 const STATE = {
   geminiKey: '',
@@ -1991,6 +2009,16 @@ function showPanel(id) {
     loadFactCheckPosts();
     pollBatchStatus();
   }
+}
+
+async function handleLogout() {
+  try {
+    await fetch(`${API_BASE}/api/logout`, { method: 'POST' });
+  } catch (err) {
+    console.error('Logout error:', err);
+  }
+  // Remove credentials cookie and redirect to login
+  window.location.href = '/login';
 }
 
 function selectCategory(el) {

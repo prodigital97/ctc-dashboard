@@ -14,6 +14,127 @@ const parser = new Parser({
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+// ─── DASHBOARD PASSWORD AUTHENTICATION ────────────────────────────────────────
+const crypto = require('crypto');
+
+const DASHBOARD_PASSWORD = process.env.DASHBOARD_PASSWORD || 'classy2026';
+const isDefaultPassword = !process.env.DASHBOARD_PASSWORD;
+
+if (isDefaultPassword) {
+  console.warn('\n=============================================================');
+  console.warn('⚠️  SECURITY WARNING: Using the default dashboard password "classy2026"');
+  console.warn('   Please set DASHBOARD_PASSWORD in your .env file to secure it!');
+  console.warn('=============================================================\n');
+}
+
+// In-memory set of active session tokens
+const activeTokens = new Set();
+
+// Helper to extract token from cookie or Authorization header
+function getAuthToken(req) {
+  // Check cookie
+  const cookieHeader = req.headers.cookie;
+  if (cookieHeader) {
+    const cookies = cookieHeader.split(';');
+    for (let cookie of cookies) {
+      const [name, val] = cookie.trim().split('=');
+      if (name === 'ctc_auth_token') {
+        return val;
+      }
+    }
+  }
+  // Check Authorization header
+  const authHeader = req.headers['authorization'];
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    return authHeader.substring(7);
+  }
+  // Check custom header
+  return req.headers['x-ctc-auth-token'];
+}
+
+// Authentication Middleware
+app.use((req, res, next) => {
+  const reqPath = req.path;
+
+  // Whitelisted endpoints that don't require authentication
+  if (
+    reqPath === '/login' ||
+    reqPath === '/api/login' ||
+    reqPath === '/api/login-status' ||
+    reqPath === '/favicon.ico'
+  ) {
+    return next();
+  }
+
+  const token = getAuthToken(req);
+  if (token && activeTokens.has(token)) {
+    return next();
+  }
+
+  // If unauthenticated API call, return 401
+  if (reqPath.startsWith('/api/')) {
+    return res.status(401).json({ error: 'Unauthorized. Please log in.' });
+  }
+
+  // Otherwise, redirect to the login page
+  res.redirect('/login');
+});
+
+// Auth status check endpoint (public)
+app.get('/api/login-status', (req, res) => {
+  res.json({ isDefaultPassword });
+});
+
+// Login endpoint
+app.post('/api/login', (req, res) => {
+  const { password } = req.body;
+  if (password === DASHBOARD_PASSWORD) {
+    const token = crypto.randomBytes(32).toString('hex');
+    activeTokens.add(token);
+    
+    // Set cookie
+    res.cookie('ctc_auth_token', token, {
+      httpOnly: true,
+      secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
+      sameSite: 'lax',
+      maxAge: 30 * 24 * 60 * 60 * 1000 // 30 days
+    });
+    
+    return res.json({ success: true, token });
+  }
+  
+  res.status(401).json({ success: false, error: 'Incorrect password.' });
+});
+
+// Logout endpoint
+app.post('/api/logout', (req, res) => {
+  const token = getAuthToken(req);
+  if (token) {
+    activeTokens.delete(token);
+  }
+  
+  // Clear cookie
+  res.clearCookie('ctc_auth_token');
+  res.json({ success: true });
+});
+
+// GET /login - Serve login page (if logged in, redirect to root)
+app.get('/login', (req, res) => {
+  const token = getAuthToken(req);
+  if (token && activeTokens.has(token)) {
+    return res.redirect('/');
+  }
+  res.sendFile(path.join(__dirname, 'login.html'));
+});
+
+// GET /api/auth-check - Check if token is valid
+app.get('/api/auth-check', (req, res) => {
+  const token = getAuthToken(req);
+  if (token && activeTokens.has(token)) {
+    return res.json({ authenticated: true });
+  }
+  res.status(401).json({ authenticated: false });
+});
 
 // Serve the static frontend (index.html, etc.) from the workspace root
 app.use(express.static(path.join(__dirname)));
