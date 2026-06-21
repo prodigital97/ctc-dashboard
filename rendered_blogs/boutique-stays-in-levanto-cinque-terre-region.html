@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Stays in Levanto: Your Romantic Base for the Cinque Terre</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Gastronomy</div>
+<h2 id="where-to-eat">The Insider Secret: Why Levanto Beats the Cinque Terre Crowd</h2><p class="drop-cap">There is a near-universal truth among seasoned Italy travelers: the five villages of the Cinque Terre are magnificent, but sleeping <em>within</em> them is an exercise in tolerance for noise, crowds, and overpriced substandard accommodation. The smart play—the move of the romantically discerning couple—is to make nearby <strong>Levanto</strong> your base. This overlooked gem, just five minutes by train from Monterosso al Mare (the northernmost Cinque Terre village), offers everything its famous neighbors do—medieval architecture, technicolor fishing boats, dramatic coastal trails—with none of the tourist-trap fatigue.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">May – October</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Wine & Culinary</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">3 – 4 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">€300 – €600 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<p class="drop-cap">Levanto has a proper main sandy beach (the Cinque Terre villages do not), excellent restaurants serving real Ligurian cuisine, and a growing portfolio of intimate boutique hotels that have quietly become the preferred choice of the discerning European traveler.</p>
+
+<div class="section-label">Strategic Context</div>
+<h2 id="context">Strategic Context: Timing & Layout</h2><h3>The Best Time to Visit</h3><p class="drop-cap">The Ligurian coast is at its finest during <strong>late May through June</strong> and <strong>September through early October</strong>. These shoulder season windows offer warm weather (22°C to 28°C / 72°F to 82°F), a calmer sea, and significantly reduced crowds on the Cinque Terre trails. The summer months of July and August are extremely hot, the trails become uncomfortably crowded, and accommodation rates spike sharply. Spring wildflowers on the coastal cliffs are particularly beautiful in May.</p><h3>Levanto's Geography</h3><p class="drop-cap">Levanto is a flat-bottomed valley town set behind a broad beach, flanked on both sides by steep headlands that plunge into the sea. The town's medieval <em>caruggi</em> (narrow alleyways) run behind the waterfront, punctuated by a 13th-century church, a small medieval castle, and the characteristic black-and-white striped Gothic architecture of Ligurian religious buildings. From Levanto, you can hike north toward the Cinque Terre via the Sentiero Azzurro trail, or south toward the lesser-known but equally beautiful promontory of Punta Mesco.</p>
+
+<div class="section-label">Accommodations</div>
+<h2 id="where-to-stay">Handpicked Boutique Hotels</h2>
+<div class="restaurant-card">
+  <div class="r-name">Hotel Nazionale Levanto</div>
+  <div class="r-meta">The Splurge</div>
+  <p>The <strong>Hotel Nazionale</strong>, a grand art nouveau building from 1898 overlooking the town's main piazza, has been beautifully restored while retaining its period charm—ornate plasterwork ceilings, original mosaic tile floors, and elegant wrought-iron balustrades. The rooftop terrace offers panoramic views over the red-tiled rooftops to the sea. Rates range from $180 to $350 USD per night.</p>
+</div><h3>The Romantic Sweet Spot: Villa Margherita & Apartments</h3><p>A collection of elegantly converted sea-view apartments and B&B rooms set in a historic Liberty-style (Italian Art Nouveau) villa steps from the beach. The sea-facing rooms feature large shuttered windows that open to a view of the turquoise Ligurian sea. It offers an intimate, 'staying with an Italian family' atmosphere at a very reasonable price point. Rates average $130 to $220 USD per night.</p><h3>The Agriturismo Option: La Sorgente</h3><p>For couples seeking a more rural, pastoral escape, the rolling hills above Levanto are dotted with working farms and agriturismi. <strong>La Sorgente</strong> is a particularly beautiful olive farm and stone farmhouse B&B in the hills, offering sweeping views of the Bay of Levanto, home-produced olive oil, and homemade breakfast. Rates average $100 to $160 USD per night.</p>
+
+<div class="section-label">Introduction</div>
+<h2 id="understanding">Culinary Magic: Eating in Levanto & Cinque Terre</h2><h3>Ligurian Cuisine 101</h3><p>The Ligurian kitchen is one of Italy's most distinctive—defined by fresh herbs (especially basil, which reaches its finest form here in its native region), olive oil from the steep hillside terraces, and the sea's bounty. The signature dishes to seek out are:</p><ul>
+<div class="tip-box">
+  <div class="tip-label">Trofie al Pesto</div>
+  <p>Tiny spiral pasta tossed in the original, hand-pounded Ligurian basil pesto with green beans and new potatoes. A religious experience.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Farinata</div>
+  <p>A thin, crispy chickpea flour pancake cooked in a wood-fired oven—the Ligurian street food of choice, eaten hot, crackling, and salty.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Sciacchetrà</div>
+  <p>The legendary sweet wine of the Cinque Terre, produced in tiny quantities from partially dried Bosco, Albarola, and Vermentino grapes. Try to find a bottle; they are not exported.</p>
+</div></ul><h3>Restaurant Pick: Osteria Tumelin</h3><p>In the medieval center of Levanto, <strong>Osteria Tumelin</strong> is a stone-vaulted trattoria serving impeccable Ligurian cuisine at honest prices. The house pesto, made to order, is one of the finest you will taste in Italy.</p>
+
+<div class="section-label">Experiences</div>
+<h2 id="what-to-do">Handpicked Couple Experiences</h2><ul><li><strong>Sunrise Hike to Punta Mesco (Half Day)</strong><br>Rise before dawn and hike the trail south from Levanto beach up and along the dramatic Punta Mesco headland. At the abandoned lighthouse on the tip of the promontory, you will watch the sunrise over the entire Cinque Terre coastline—five fishing villages glowing gold in the first light, the sea below you turning from black to silver to turquoise. This is the view. <em>Cost: Free. Difficulty: Moderate. Duration: 3 to 4 hours round trip.</em></li><li><strong>Coastal Train Hopping to Each Cinque Terre Village (Full Day)</strong><br>Buy a Cinque Terre Card and use the frequent regional trains to hop between the five villages at your leisure. Spend an hour in each: a coffee in Vernazza, a swim in Monterosso, a glass of Sciacchetrà wine in Riomaggiore. <em>Cost: €18 to €25 per person for a day card.</em></li><li><strong>Sea Kayaking Along the Cliffs (Half Day)</strong><br>Paddle along the base of the dramatic Ligurian sea cliffs from Levanto beach toward Monterosso, accessing sea caves, hidden coves, and turquoise anchorages unreachable on foot. <em>Cost: Approx. €50 to €80 per couple for a guided half-day tour.</em></li></ul>
+
+<div class="section-label">Photography</div>
+<h2 id="instagram-spots">The Photography Spot Guide</h2><ol>
+<div class="tip-box">
+  <div class="tip-label">Punta Mesco at Sunrise</div>
+  <p>The most spectacular panoramic photograph of the entire Cinque Terre coastline from above, with all five villages visible along the cliffside in the early morning light. <em>Optimal time: 30 minutes after sunrise.</em></p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Levanto Beach at Low Tide</div>
+  <p>The long sandy beach at low tide creates a perfect foreground for a wide-angle couple's portrait, with the pastel hillside town rising behind you and the turquoise sea in front.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Vernazza Harbor (Cinque Terre)</div>
+  <p>The harbor at Vernazza is still the most beautiful in the Cinque Terre. Photograph the boats reflected in the still green water from the sea-facing rocks. Arrive at 7 AM before the day-trippers board the trains.</p>
+</div></ol>
+
+<div class="section-label">Practicalities</div>
+<h2 id="practicalities">Practicalities for Couples</h2><ul>
+<div class="tip-box">
+  <div class="tip-label">Getting There</div>
+  <p>Take the fast Italo or Trenitalia train from Rome (Termini) to La Spezia (2.5 hours) or from Milan (2 hours). From La Spezia, take a regional train north along the coast; Levanto is the next stop after Monterosso.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Cinque Terre Card</div>
+  <p>Required for hiking the Sentiero Azzurro coastal trail. Purchased at any Cinque Terre train station or the Levanto tourist office.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Car</div>
+  <p>Do not drive a car to the Cinque Terre or Levanto in summer. The ZTL (restricted traffic zones) and parking fees make it impractical. Trains are the only sensible option.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Ideal Stay Length</div>
+  <p>4 to 5 nights gives you ample time to explore Levanto, day-trip to all five Cinque Terre villages, and complete the Punta Mesco sunrise hike.</p>
+</div></ul>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

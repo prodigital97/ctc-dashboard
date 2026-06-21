@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Local Foodie's Guide to Cape Town's Culinary Delights: Sea-to-Table Luxury</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Gastronomy</div>
+<h2 id="where-to-eat">The Convergence of Continents: Cape Town's Gastronomy Scene</h2><p class="drop-cap">Perched at the southern tip of the African continent, Cape Town is a sensory playground where dramatic ocean cliffs meet lush vineyards, all under the watchful gaze of Table Mountain. This unique geography has fostered a world-class culinary scene that is as diverse as the city itself. Here, local Cape Malay spices, fresh Atlantic and Indian Ocean catches, and premium wines from the nearby Constantia valley converge in the hands of visionary chefs.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">November – March</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Scenic Adventure</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">5 – 6 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">$250 – $500 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<p class="drop-cap">For travel couples who plan their journeys around their palates, Cape Town offers an extraordinary range of dining experiences. Whether you are seeking a highly sophisticated, multi-course fine dining tasting menu or a relaxed, feet-in-the-sand seafood feast overlooking the Atlantic surf, the Mother City delivers romance and flavor in equal measure.</p>
+
+<div class="section-label">Accommodations</div>
+<h2 id="where-to-stay">Accommodations: Where Luxury Meets Gastronomy</h2><ul>
+<div class="hotel-card">
+  <span class="hotel-tier tier-splurge"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Splurge</span>
+  <div class="hotel-name">One&Only Cape Town</div>
+  <p class="drop-cap">A stunning luxury resort located in the heart of the V&A Waterfront, featuring private canal islands. It is home to Nobu Cape Town, the only Nobu on the African continent, serving world-class Japanese-Peruvian fusion with local South African seafood twists.</p>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><strong>Best room:</strong> Marina Grand Suite</div>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $900 - $1,500 per night</div>
+</div>
+<div class="hotel-card">
+  <span class="hotel-tier tier-boutique"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Romantic Sweet Spot</span>
+  <div class="hotel-name">Tintswalo Atlantic</div>
+  <p class="drop-cap">A boutique lodge nestled at the base of Chapman's Peak, right on the water's edge. The lodge’s restaurant offers a daily changing sea-to-table menu, allowing couples to dine on the outdoor deck as the Atlantic waves crash against the rocks below.</p>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><strong>Best room:</strong> Luxury Island Suite</div>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $600 - $900 per night</div>
+</div></ul>
+
+<div class="section-label">Gastronomy</div>
+<h2 id="where-to-eat-2">Gastronomy: Cape Town's Premium Dining Gems</h2>
+<div class="restaurant-card">
+  <div class="r-name">FYN Restaurant</div>
+  <div class="r-meta">The Unmissable Splurge</div>
+  <p>FYN is an urban culinary sanctuary that blends South African ingredients with Japanese techniques. Sitting on the top floor of a historic building, the dining room features a striking hanging wooden ceiling installation designed by architect Jane Vlok. The multi-course kaiseki-style menu highlights local abalone, Cape botanicals, and Karoo wild game. Paired with rare local vintage wines, it is a theatrical, romantic dining experience.</p>
+</div>
+<div class="restaurant-card">
+  <div class="r-name">The Test Kitchen Carbon</div>
+  <div class="r-meta">The Splurge</div>
+  <p>Located in the trendy Old Biscuit Mill in Salt River, this exclusive venue by Chef Luke Dale Roberts is a dramatic theater of flavor. The menu focuses on intense, wood-fired flavors and intricate plating, accompanied by a curated wine pairing that showcases the best of South Africa's boutique vineyards.</p>
+</div>
+<div class="restaurant-card">
+  <div class="r-name">Codfather Seafood & Sushi</div>
+  <div class="r-meta">Local Food</div>
+  <p>A legendary institution in the beachfront suburb of Camps Bay. The restaurant has no written menu; instead, a local host guides you to a massive ice counter piled high with Cape rock lobster, butterfish, kingklip, and yellowtail. You select your exact catches, which are then grilled to perfection and served alongside fresh sushi. The atmosphere is bustling, authentic, and perfect for a relaxed date night.</p>
+</div>
+
+<div class="section-label">Gastronomy</div>
+<h2 id="where-to-eat-3">Handpicked Couple Culinary Experiences</h2><ul><li><strong>Constantia Valley Private Wine Safari (6 Hours)</strong><br>Take a private chauffeur-driven tour of the historic Constantia wine valley, the oldest wine-producing region in the southern hemisphere. You will enjoy a private tasting of award-winning Sauvignon Blancs and sweet Vin de Constance at Klein Constantia and Buitenverwachting, concluding with a gourmet three-course lunch in the vineyards. <em>Cost: Approx. $250 USD per couple.</em></li><li><strong>Champagne Sunset Cruise from the Waterfront (2 Hours)</strong><br>Board a luxury catamaran from the V&A Waterfront and sail into Table Bay at dusk. Enjoy local Cape oysters and chilled Cap Classique sparkling wine as the sun drops behind the horizon, bathing Table Mountain in a soft pink glow. <em>Cost: Approx. $120 USD per couple.</em></li></ul>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Curated Cruises: The Modern Couple's Yacht Guide</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Destinations</div>
+<h2 id="section-ocean-elegance-reimagined-the-rise-of-boutique-curated-sailings">Ocean Elegance Reimagined: The Rise of Boutique Curated Sailings</h2><p class="drop-cap">For decades, traditional cruising was associated with massive ships, crowded buffet lines, and rigid schedules. However, a new era of luxury curated cruising has emerged, specifically designed for sophisticated travelers who value privacy, flexibility, and refined design. By utilizing smaller, yacht-sized vessels, these luxury signature sailings can slip into remote harbors and quiet bays that are inaccessible to larger passenger liners, providing a highly exclusive ocean escape.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">May – October</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Wine & Culinary</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">3 – 4 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">€300 – €600 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<p class="drop-cap">These boutique cruises combine the amenities of a five-star hotel—such as spacious terrace suites, Michelin-caliber dining, and private spas—with the adventure of visiting a new coastal destination every day. Here is our couple's guide to the most romantic luxury curated cruises and yacht experiences.</p>
+
+<div class="section-label">Strategic Context</div>
+<h2 id="context">Strategic Context: Routing & Staterooms</h2><h3>Selecting Your Cruise Line</h3><p class="drop-cap">When planning a luxury sailing, look for cruise lines that offer **small-capacity ships** (typically under 300 guests) and all-suite accommodations. The best itineraries focus on coastal areas like the Amalfi Coast, the Greek Cyclades, or the remote islands of the South Pacific, allowing for relaxed days of exploration.</p>
+
+<div class="section-label">Accommodations</div>
+<h2 id="where-to-stay">Top Luxury Curated Cruise Lines</h2><ul>
+<div class="hotel-card">
+  <span class="hotel-tier tier-splurge"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Splurge</span>
+  <div class="hotel-name">The Ritz-Carlton Yacht Collection</div>
+  <p class="drop-cap">A stunning fleet of custom-built superyachts designed to look and feel like private vessels. Featuring all-terrace suites, personalized butler service, and a relaxed, open-ended dining schedule. Best Yacht: Evrima.</p>
+
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $1,200 - $2,500 USD per person, per night</div>
+</div>
+<div class="hotel-card">
+  <span class="hotel-tier tier-boutique"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Romantic Sweet Spot</span>
+  <div class="hotel-name">Silversea Cruises</div>
+  <p>A legendary luxury cruise line famous for its all-inclusive service (including private executive transfers and champagne on arrival) and highly curated shore excursions. Best Ship: Silver Dawn.</p>
+
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $800 - $1,500 USD per person, per night</div>
+</div></ul>
+
+<div class="section-label">Experiences</div>
+<h2 id="what-to-do">Iconic Couple Cruising Experiences</h2><ol>
+<div class="tip-box">
+  <div class="tip-label">The Marina Platform Sundowner</div>
+  <p>Luxury yachts feature drop-down marina platforms at the stern. Spend the afternoon paddleboarding or swimming directly from the ship, finishing with champagne as the yacht gets underway.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Bespoke In-Suite Veranda Dining</div>
+  <p>Have your private butler serve a multi-course dinner on your private terrace, allowing you to dine under the stars while listening to the waves.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Quiet Port Explorations</div>
+  <p>Small ships dock in remote harbors (like Portofino or Saint-Tropez). Walk off the ship directly into the heart of historic coastal villages without the queues.</p>
+</div></ol>
+
+<div class="section-label">Experiences</div>
+<h2 id="what-to-do-2">Handpicked Couple Excursions</h2><ul><li><strong>Private Yacht Charter to Secret Coves (4 Hours)</strong><br>Book a private speed launch arranged by the ship's concierge to explore hidden sea caves and secluded swimming spots along the coast. <em>Cost: Approx. $500 USD per couple.</em></li><li><strong>Private Winery Tour & Tasting (3 Hours)</strong><br>Step off the ship for a private transfer to a boutique clifftop vineyard, enjoying local wines paired with local culinary specialties. <em>Cost: Approx. $200 USD per couple.</em></li></ul>
+
+<div class="section-label">Photography</div>
+<h2 id="instagram-spots">The Photography Spot Guide</h2><ol>
+<div class="ig-spot">
+  <div class="spot-name">1. The Yacht Infinity Pool Stern View</div>
+  <p>Capture a photo from inside the pool looking out towards the ship's wake as the sun sets over the ocean horizon.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">The Private Suite Veranda</div>
+  <p>Frame a shot of your partner relaxing on the daybed of your private terrace, with a backdrop of colorful coastal villages.</p>
+</div></ol>
+
+<div class="section-label">Practicalities</div>
+<h2 id="practicalities">Practicalities for Couples</h2><ul>
+<div class="tip-box">
+  <div class="tip-label">All-Inclusive Luxury</div>
+  <p>Top-tier cruise lines include all gratuities, premium beverages, and selected shore excursions in the base fare, making the onboard experience completely stress-free.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Ideal Voyage Length</div>
+  <p>7 to 10 nights to fully experience the itinerary and enjoy the onboard luxury.</p>
+</div></ul>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

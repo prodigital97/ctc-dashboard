@@ -1,0 +1,181 @@
+/* ========================================================
+   EDITOR STYLESHEET (GUTENBERG & TINYMCE CLASSIC BLOCKS)
+   Specifically designed to make editing readable (dark theme)
+   ======================================================== */
+
+/* Main Editor Body */
+body.mce-content-body,
+.editor-styles-wrapper {
+  background-color: #111111 !important;
+  color: #E8E2D8 !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  line-height: 1.85 !important;
+  font-size: 19px !important;
+  padding: 20px !important;
+}
+
+/* Headings */
+body.mce-content-body h1,
+body.mce-content-body h2,
+body.mce-content-body h3,
+body.mce-content-body h4,
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+  font-family: 'Playfair Display', serif !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+body.mce-content-body h1,
+.editor-styles-wrapper h1 {
+  font-size: 48px !important;
+  margin-bottom: 24px !important;
+}
+
+body.mce-content-body h2,
+.editor-styles-wrapper h2 {
+  font-size: 38px !important;
+  margin: 50px 0 20px !important;
+}
+
+body.mce-content-body h3,
+.editor-styles-wrapper h3 {
+  font-size: 26px !important;
+  margin: 35px 0 14px !important;
+}
+
+body.mce-content-body h4,
+.editor-styles-wrapper h4 {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #C9A86C !important;
+  margin: 40px 0 20px !important;
+}
+
+/* Paragraphs & Text */
+body.mce-content-body p,
+.editor-styles-wrapper p {
+  color: #D0C8BC !important;
+  margin-bottom: 22px !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
+
+body.mce-content-body strong,
+.editor-styles-wrapper strong {
+  color: #FFFFFF !important;
+}
+
+body.mce-content-body a,
+.editor-styles-wrapper a {
+  color: #C9A86C !important;
+  text-decoration: none !important;
+}
+
+/* Section Labels & Dividers */
+body.mce-content-body .section-label,
+.editor-styles-wrapper .section-label {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 5px !important;
+  text-transform: uppercase !important;
+  color: #C9A86C !important;
+  margin-top: 50px !important;
+  margin-bottom: 8px !important;
+}
+
+body.mce-content-body .gold-divider,
+.editor-styles-wrapper .gold-divider {
+  border: none !important;
+  border-bottom: 1px solid rgba(201, 168, 108, 0.3) !important;
+  margin: 50px 0 !important;
+}
+
+/* Hotel Cards */
+body.mce-content-body .hotel-card,
+.editor-styles-wrapper .hotel-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-left: 3px solid #C9A86C !important;
+  border-radius: 6px !important;
+  padding: 24px 28px !important;
+  margin-bottom: 20px !important;
+}
+
+body.mce-content-body .hotel-name,
+.editor-styles-wrapper .hotel-name {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+body.mce-content-body .hotel-tier,
+.editor-styles-wrapper .hotel-tier {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  color: #C9A86C !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+/* Restaurant Cards */
+body.mce-content-body .restaurant-card,
+.editor-styles-wrapper .restaurant-card {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+  padding: 24px 28px !important;
+  margin-bottom: 20px !important;
+}
+
+body.mce-content-body .r-name,
+.editor-styles-wrapper .r-name {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+body.mce-content-body .r-meta,
+.editor-styles-wrapper .r-meta {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  color: #8A8578 !important;
+}
+
+/* Instagram Spots */
+body.mce-content-body .ig-spot,
+.editor-styles-wrapper .ig-spot {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+  padding: 24px 28px !important;
+  margin-bottom: 20px !important;
+}
+
+body.mce-content-body .spot-name,
+.editor-styles-wrapper .spot-name {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px !important;
+  color: #C9A86C !important;
+  font-weight: 700 !important;
+}
+
+/* Tip Boxes */
+body.mce-content-body .tip-box,
+.editor-styles-wrapper .tip-box {
+  background: rgba(201, 168, 108, 0.06) !important;
+  border: 1px solid rgba(201, 168, 108, 0.2) !important;
+  border-radius: 6px !important;
+  padding: 20px 24px !important;
+  margin-bottom: 14px !important;
+}

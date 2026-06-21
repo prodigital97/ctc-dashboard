@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monad Shoal at Sunrise: Our First-Hand Guide to Malapascua's Thresher Sharks</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Destinations</div>
+<h2 id="section-salty-breezes-golden-hours-the-visual-spell-of-malapascua">Salty Breezes & Golden Hours: The Visual Spell of Malapascua</h2>
+<p class="drop-cap">When my partner and I first stepped off the outrigger bangka boat onto Bounty Beach, the powdery white sand was still warm from the midday sun. Located at the northernmost tip of Cebu, Malapascua is a tiny island that measures just two kilometers long and one kilometer wide. It is a place of slow rhythms, where there are no cars, only sandy paths winding through local villages and palm groves. For travel couples, it represents a rare, raw tropical sanctuary. The air here smells of salt and roasting coconuts, and at sunset, the western sky turns a deep, bruised violet that reflects perfectly on the glassy Cebu Strait.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">Year-Round</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Romantic Luxury</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">4 – 5 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">€300 – €700 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<p class="drop-cap">We spent a week exploring the island's shores, and what we found was an island of two halves: a world-class diving destination below the surface, and an incredibly peaceful, secluded island escape above it. Here is our first-hand guide to experiencing the magic of Malapascua together.</p>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-secluded-coves-finding-quiet-sands-in-malapascua">Secluded Coves: Finding Quiet Sands in Malapascua</h2>
+<p class="drop-cap">Most visitors stay on Bounty Beach along the south coast, where the dive shops and restaurants are located. However, we rented a scooter for 300 PHP ($5 USD) a day to find the quiet coves on the northern side. Our favorite was **Langob Beach**. Tucked away at the northern tip, it is a vast stretch of blindingly white, powdery sand framed by coconut palms and a few local fishing boats. When we arrived at 10:00 AM, we were the only ones there. The water is crystal-clear, dropping off quickly into a deep, turquoise swimming area. There are no beach clubs or sun loungers here—just pure, untouched coastal peace. We brought a sarong, laid it under the shade of a palm tree, and listened to the wind in the fronds for hours.</p>
+<p>For an even more intimate spot, seek out **Bakhaw Beach**. It is a smaller, shallower cove with coarse golden sand and rock formations that create private tide pools. It is perfect for wading hand-in-hand during low tide when the sandbars emerge.</p>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-bespoke-bungalows-where-to-lay-your-head">Bespoke Bungalows: Where to Lay Your Head</h2>
+<p>We divided our stay between two distinct properties that cater beautifully to couples:</p>
+<ul>
+
+<div class="hotel-card">
+  <span class="hotel-tier tier-splurge"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Splurge</span>
+  <div class="hotel-name">Tepanee Beach Resort</div>
+  <p>Perched on a private rocky cliffside at the southern tip of the island, Tepanee offers private stone bungalows with thatched roofs. We booked Cottage 20, which sits on the highest ledge and features a private wooden balcony looking directly out at the sunset. The resort has its own private sandy cove, which is completely sheltered from the wind.</p>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><strong>Best room:</strong> Deluxe Sunset Cottage</div>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $110 - $145 USD per night</div>
+</div>
+
+<div class="hotel-card">
+  <span class="hotel-tier tier-boutique"><span style="color:#C9A86C;margin-right:4px;">◆</span>The Romantic Sweet Spot</span>
+  <div class="hotel-name">Ocean Vida Beach Resort</div>
+  <p>Located directly on Bounty Beach, this resort is ideal for active couples. The beachfront rooms feature private terraces where you can step straight onto the sand. The service is incredibly warm, and the beachfront beanbags are the best spot on the island for a sunset cocktail.</p>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg><strong>Best room:</strong> Beachfront Deluxe Room</div>
+  <div class="hotel-detail"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A86C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><strong>Price range:</strong> $85 - $115 USD per night</div>
+</div>
+</ul>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-under-the-surface-tracking-thresher-sharks-at-monad-shoal">Under the Surface: Tracking Thresher Sharks at Monad Shoal</h2>
+<p>The primary reason divers flock to Malapascua is the pelagic thresher shark. These magnificent creatures, known for their long, ribbon-like tail fins and large, dark eyes, rise from the deep trenches to clean at **Monad Shoal** every morning. We booked our dives with **Devocean Divers**, a professional shop located on the beach. Our wake-up call was at 4:30 AM. Bleary-eyed, we walked down to the boat under a sky full of stars. The boat ride to Monad Shoal takes about 35 minutes. As the sun began to paint the horizon in shades of orange and gold, we rolled backwards into the 27°C water.</p>
+<p>Descending to the cleaning station plateau at 28 meters, we knelt behind a small rope barrier. The dive requires an Advanced Open Water certification (or a Deep Adventure dive), and we highly recommend using Nitrox 32% to maximize your bottom time. Within ten minutes, a 3-meter thresher shark emerged from the blue gloom, swimming with a slow, hypnotic elegance just five meters away from us. It was a profound, quiet moment to share. The shark circled the cleaning station three times before disappearing back into the abyss.</p>
+<p>We also did a day trip to **Gato Island**, a marine sanctuary about 50 minutes away. The highlight here is a 30-meter cave tunnel that runs directly underneath the island. Armed with flashlights, we swam through the tunnel, passing sleeping white-tip reef sharks resting on the rocky floor, colorful nudibranchs, and sea snakes. We exited the tunnel into a bright coral garden filled with sea turtles.</p>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-barefoot-bites-grilled-snapper-on-the-beach">Barefoot Bites: Grilled Snapper on the Beach</h2>
+<p>Dining in Malapascua is a relaxed, feet-in-the-sand affair. Our absolute favorite dinner spot was **Angelina Beach Pizzeria & Ristorante**. Run by an Italian expat, it serves the best wood-fired pizza and handmade pasta in the region. We grabbed a table on the sand, ordered a bottle of Pinot Grigio, and shared a thin-crust pizza topped with prosciutto and fresh arugula while the waves lapped nearby. Expect to pay around $35 USD for dinner for two.</p>
+<p>For local flavors, we headed to **Amihan Restaurant**, located at Tepanee. Perched on the cliffside, it offers spectacular panoramic views of the water. We ordered the *Kinilaw* (Filipino-style ceviche made with fresh raw fish, vinegar, ginger, and chilies) and the grilled local red snapper served with garlic rice. It was fresh, punchy, and incredibly satisfying.</p>
+
+<div class="section-label">Practicalities</div>
+<h2 id="practicalities">Island Practicalities: Tides, Sunscreen & Logistics</h2>
+<p>Getting to Malapascua requires some planning. We flew into Mactan-Cebu International Airport (CEB) and booked a private car transfer through our resort. The drive to Maya Port takes about 4 hours, followed by a 45-minute bangka boat transfer to Bounty Beach. The private transfer costs around $80 USD each way and is highly recommended to avoid the crowds on public buses.</p>
+<p>There are no ATMs on the island, so you must bring enough cash (Philippine Pesos) from Cebu to cover your dining, diving, and tipping. Cell connectivity is decent near Bounty Beach, but we recommend grabbing a local Smart eSIM at the airport. Lastly, the island is committed to marine preservation; reef-safe sunscreen is strictly required, and touching or feeding the marine wildlife is forbidden.</p>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

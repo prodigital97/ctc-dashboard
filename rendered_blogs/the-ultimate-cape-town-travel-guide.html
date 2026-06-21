@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cape Town for Couples: The Ultimate Romantic Travel Guide</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Destinations</div>
+<h2 id="section-africas-most-seductive-city-cape-town-for-couples">Africa's Most Seductive City: Cape Town for Couples</h2><p class="drop-cap">Cape Town is, by virtually any metric, one of the most beautiful cities on earth. The combination of its setting—a flat-topped mountain rising 1,086 meters directly above the city, flanked by the Atlantic on one side and the warmer False Bay on the other—with its world-class food and wine scene, its diverse cultural heritage, and its extraordinary natural hinterland, makes it uniquely compelling for couples seeking a city break with real substance.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">November – March</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Scenic Adventure</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">5 – 6 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">$250 – $500 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<p class="drop-cap">It is also, for the discerning couple, a destination of remarkable value. The South African Rand's persistent weakness against the Dollar, Pound, and Euro means that Cape Town's finest hotels, restaurants, and wine estates are accessible at a fraction of what equivalent experiences cost in Paris, Tokyo, or New York. For couples who prioritize quality-to-cost ratio in their luxury travel, Cape Town is simply one of the world's greatest deals.</p>
+
+<div class="section-label">Strategic Context</div>
+<h2 id="context">Strategic Context: Timing & Layout</h2><h3>The Best Time to Visit</h3><p class="drop-cap">Cape Town is a <strong>summer destination</strong> (the southern hemisphere summer runs November to March). The peak sweet spot for couples is <strong>December through February</strong>—long warm days (25°C to 32°C / 77°F to 90°F), perfect swimming conditions on both the Atlantic and False Bay coasts, and Cape Town's spectacular outdoor social scene in full swing. <strong>November and March</strong> are quieter but nearly as warm, with lower accommodation rates. The winter (June to August) brings cold, windy, and often rainy conditions—though the dramatic winter swells at Dungeons surf break in Hout Bay are a spectacle in themselves.</p><h3>The City's Key Zones</h3><ul>
+<div class="tip-box">
+  <div class="tip-label">V&A Waterfront</div>
+  <p class="drop-cap">The tourist and commercial heart—shops, restaurants, and the Two Oceans Aquarium. Stay here if you want maximum convenience.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">De Waterkant & Green Point</div>
+  <p>A hip, artsy neighborhood of converted Victorian townhouses near the Waterfront. The best boutique hotels and cocktail bars are here.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Sea Point & Fresnaye</div>
+  <p>Upscale residential suburb along the Atlantic Seaboard with a long ocean promenade. Great for morning runs and the best deli-café scene.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Camps Bay</div>
+  <p>The glamorous beach suburb with a wide palm-lined beach strip and a strip of upscale restaurants and bars facing the Atlantic. Cape Town's most cinematic neighborhood.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">The City Bowl & Bo-Kaap</div>
+  <p>The historic center beneath Table Mountain. The Bo-Kaap—a neighborhood of candy-colored Cape Malay houses—is the most photogenic street scene in South Africa.</p>
+</div></ul>
+
+<div class="section-label">Accommodations</div>
+<h2 id="where-to-stay">Where to Stay: Romantic Hotels in Cape Town</h2>
+<div class="restaurant-card">
+  <div class="r-name">The Twelve Apostles Hotel (Camps Bay)</div>
+  <div class="r-meta">The Splurge</div>
+  <p>Set dramatically on the boulder-strewn slopes of the Twelve Apostles mountain range, directly above the Atlantic Ocean between Camps Bay and Hout Bay, the <strong>Twelve Apostles Hotel & Spa</strong> offers the most spectacular setting of any hotel in Cape Town. The hotel has its own helipad, cinema, and spa, and the mountain-and-sea views from the pool terrace are incomparable. Rates: $350 to $800 USD per night.</p>
+</div><h3>The Romantic Sweet Spot: The Silo Hotel (V&A Waterfront)</h3><p>Located in the converted grain silo structure of the Zeitz Museum of Contemporary Art Africa (MOCAA), <strong>The Silo Hotel</strong> is one of the finest design hotels in the world. The 28 rooms are theatrical and individually designed—pillow-soft furniture, hand-crafted local fabrics, and distinctive bubble windows that bulge outward from the historic concrete grain silo structure. The rooftop pool and bar offer sweeping views of Table Mountain and the harbor. Rates: $500 to $1,200 USD per night.</p><h3>The Boutique Alternative: Ellerman House (Bantry Bay)</h3><p>A grand 1912 Edwardian mansion on a terraced hillside above Bantry Bay, <strong>Ellerman House</strong> operates as a private house hotel with just 13 rooms and two private villas. Guests have access to a spectacular private pool terrace, an exceptional cellar of South African wines, and a full gallery of contemporary South African art. The level of personalized service is unmatched in Cape Town. Rates: $500 to $900 USD per night.</p>
+
+<div class="section-label">Introduction</div>
+<h2 id="understanding">Culinary Magic: Cape Town at the Table</h2>
+<div class="restaurant-card">
+  <div class="r-name">The Test Kitchen</div>
+  <div class="r-meta">The Unmissable Splurge</div>
+  <p><strong>The Test Kitchen</strong> by Luke Dale-Roberts is one of the most celebrated restaurants in Africa—a 20-course culinary journey through South African ingredients and global technique, served in the intimate setting of a converted Cape Town warehouse. Booking several months in advance is essential. Approximately $150 to $200 USD per person for the full tasting menu (excluding wine pairing).</p>
+</div><h3>The Local Experience: Bo-Kaap Food Tour</h3><p>The Cape Malay community of Bo-Kaap has one of South Africa's most distinctive culinary traditions—spiced curries, sweet milk tarts, and aromatic breyanis that reflect the island's South Asian and Indonesian heritage. Book a walking food tour through the colorful streets for approximately $50 USD per person.</p><h3>Wine Tasting in Franschhoek</h3><p>A 45-minute drive from Cape Town through the Franschhoek mountain pass brings you to the most beautiful wine valley in South Africa—a bowl of dramatic mountains encircling over 40 world-class wine estates. Book the legendary <strong>Le Franschhoek Wine Tram</strong> for a hop-on-hop-off tasting circuit of the valley's finest estates. Alternatively, secure a private tasting at <strong>Babylonstoren</strong> (the most beautiful farm estate in the Cape Winelands) or <strong>Grande Provence</strong> for a more intimate experience.</p>
+
+<div class="section-label">Experiences</div>
+<h2 id="what-to-do">Handpicked Couple Experiences</h2><ul><li><strong>Table Mountain Cable Car at Sunrise (2 Hours)</strong><br>Take the first cable car of the day (tickets book out; purchase online the night before). At the summit, you have the flat mountain plateau entirely to yourselves as the Cape Peninsula spreads below in every direction. <em>Cost: Approx. $25 USD per person return.</em></li><li><strong>Cape Point & Cape Peninsula Drive (Full Day)</strong><br>The most spectacular drive in South Africa. Take the M3 south through Muizenberg, past the colorful Beach Boxes of Muizenberg Beach, down to Cape Point and the Cape of Good Hope Nature Reserve. Watch the baboons at Cape Point, walk to the old lighthouse for the full Peninsula panorama, then drive back via Boulders Beach (African penguin colony) and Chapman's Peak Drive (arguably the world's most scenic coastal road). <em>Cost: Nature Reserve entry approx. $15 USD per person.</em></li><li><strong>Sunset Catamaran Cruise (2 Hours)</strong><br>Board a private catamaran from the V&A Waterfront for a sunset cruise along the Atlantic Seaboard. Sip champagne as Cape Town's skyline silhouettes against a flaming sky. Atlantic seals often escort the boat. <em>Cost: Approx. $50 to $80 USD per person.</em></li></ul>
+
+<div class="section-label">Photography</div>
+<h2 id="instagram-spots">The Photography Spot Guide</h2><ol>
+<div class="tip-box">
+  <div class="tip-label">Bo-Kaap Wale Street at Sunrise</div>
+  <p>The most photographed street in South Africa—a row of brightly painted Cape Malay houses in pink, yellow, cobalt, and lime. Arrive at 7 AM before cars fill the street. <em>Optimal time: Sunrise on a clear morning.</em></p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Chapman's Peak Drive (Sunset Direction)</div>
+  <p>Drive north on Chapman's Peak Drive in the late afternoon so the setting sun illuminates the cliff face above and the ocean below. Pull into the designated viewpoints for dramatic coastal panoramas.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Table Mountain from Signal Hill (Dusk)</div>
+  <p>Drive or walk to the Signal Hill viewpoint above Sea Point for the classic Cape Town image—Table Mountain's flat top lit by the last pink light of day, with the city bowl and harbor below.</p>
+</div></ol>
+
+<div class="section-label">Practicalities</div>
+<h2 id="practicalities">Practicalities for Couples</h2><ul>
+<div class="tip-box">
+  <div class="tip-label">Getting There</div>
+  <p>Cape Town International Airport (CPT) receives direct flights from London (Heathrow, 11 hours), Amsterdam (11.5 hours), Frankfurt (11 hours), and Dubai (9 hours). No direct flights from North America; connect via London, Amsterdam, or Doha.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Currency</div>
+  <p>South African Rand (ZAR). Exceptional exchange rates for USD, GBP, and EUR travelers make Cape Town extraordinary value.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Safety</div>
+  <p>Cape Town has significant socioeconomic inequality and some high-crime areas. Stay aware of your surroundings, use Uber/Bolt for all transport, and avoid walking in unfamiliar areas after dark. The tourist areas are generally safe in daylight hours.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Ideal Stay Length</div>
+  <p>7 to 10 nights to properly experience the city, the Peninsula drive, the Winelands, and at least one day of relaxation on the Atlantic Seaboard.</p>
+</div></ul>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

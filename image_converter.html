@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classy Travel Couples — Premium Bulk Image Converter</title>
+  <meta name="description" content="Secure browser-based bulk PNG to JPG converter with customizable compression, resizing, and center cropping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #111118;
+      --bg-card: #16161f;
+      --bg-card-hover: #1c1c28;
+      --border: #2a2a3a;
+      --border-focus: #ff6b6b;
+      --accent: #ff6b6b;
+      --accent-hover: #ff8585;
+      --accent-glow: rgba(255, 107, 107, 0.15);
+      --accent2: #4ecdc4;
+      --text-primary: #f0f0f8;
+      --text-secondary: #8888aa;
+      --text-muted: #555570;
+      --success: #22d37b;
+      --error: #ff5f6d;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.6);
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+
+    header {
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .brand-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .header-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(78, 205, 196, 0.1);
+      border: 1px solid rgba(78, 205, 196, 0.25);
+      color: var(--accent2);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      flex: 1;
+      height: calc(100vh - 69px);
+    }
+
+    /* Settings Panel */
+    .sidebar {
+      background: var(--bg-secondary);
+      border-right: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .control-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-label span.value-indicator {
+      color: var(--accent);
+      font-family: monospace;
+    }
+
+    .form-input, .form-select {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      padding: 10px 12px;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .range-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--bg-secondary);
+      outline: none;
+      margin: 8px 0;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 8px var(--accent-glow);
+      transition: var(--transition);
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: var(--accent-hover);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .checkbox-group input {
+      accent-color: var(--accent);
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      width: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ff5252);
+      color: white;
+      box-shadow: 0 4px 14px rgba(255, 107, 107, 0.3);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.45);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--bg-card-hover);
+      color: var(--text-primary);
+      border-color: var(--text-muted);
+    }
+
+    .btn-success {
+      background: linear-gradient(135deg, #22d37b, #10b860);
+      color: white;
+      box-shadow: 0 4px 14px rgba(34, 211, 123, 0.25);
+    }
+
+    .btn-success:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(34, 211, 123, 0.4);
+    }
+
+    .btn-success:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-danger {
+      background: rgba(255, 95, 109, 0.15);
+      color: var(--error);
+      border: 1px solid rgba(255, 95, 109, 0.25);
+    }
+
+    .btn-danger:hover {
+      background: rgba(255, 95, 109, 0.25);
+      border-color: var(--error);
+    }
+
+    .sidebar-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    /* Main Workspace Panel */
+    .workspace {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      overflow-y: auto;
+    }
+
+    /* Drag & Drop */
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(22, 22, 31, 0.3);
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent);
+      background: rgba(255, 107, 107, 0.03);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .drop-zone-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      display: inline-block;
+      transition: var(--transition);
+    }
+
+    .drop-zone.dragover .drop-zone-icon {
+      transform: translateY(-6px);
+      color: var(--accent);
+    }
+
+    .drop-zone-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .drop-zone-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* File Queue List */
+    .queue-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+      min-height: 250px;
+    }
+
+    .queue-header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .queue-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .queue-stats {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .queue-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      color: var(--text-muted);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .queue-empty-icon {
+      font-size: 48px;
+      margin-bottom: 14px;
+      opacity: 0.5;
+    }
+
+    .queue-list {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .queue-item {
+      display: grid;
+      grid-template-columns: 80px 1.5fr 1fr 1fr 1.2fr auto;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(42, 42, 58, 0.4);
+      transition: var(--transition);
+      gap: 16px;
+    }
+
+    .queue-item:hover {
+      background: var(--bg-card-hover);
+    }
+
+    .queue-item:last-child {
+      border-bottom: none;
+    }
+
+    .img-thumb-container {
+      width: 64px;
+      height: 44px;
+      border-radius: 4px;
+      overflow: hidden;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .img-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item-name-col {
+      min-width: 0;
+    }
+
+    .item-name {
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text-primary);
+    }
+
+    .item-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .item-size {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .item-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .status-pending { color: var(--text-secondary); }
+    .status-pending .status-dot { background: var(--text-muted); }
+
+    .status-converting { color: var(--accent2); }
+    .status-converting .status-dot {
+      background: var(--accent2);
+      animation: pulse 1.5s infinite;
+    }
+
+    .status-success { color: var(--success); }
+    .status-success .status-dot { background: var(--success); }
+
+    .status-error { color: var(--error); }
+    .status-error .status-dot { background: var(--error); }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .savings-badge {
+      background: rgba(34, 211, 123, 0.1);
+      border: 1px solid rgba(34, 211, 123, 0.2);
+      color: var(--success);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .item-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .action-icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .action-icon-btn:hover {
+      border-color: var(--text-muted);
+      color: var(--text-primary);
+      background: var(--bg-card);
+    }
+
+    .action-icon-btn.btn-action-view:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-glow);
+    }
+
+    .action-icon-btn.btn-action-delete:hover {
+      border-color: var(--error);
+      color: var(--error);
+      background: rgba(255, 95, 109, 0.1);
+    }
+
+    /* Comparison Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 1100px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      color: var(--text-primary);
+    }
+
+    .modal-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      overflow-y: auto;
+    }
+
+    .comparison-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 2.333; /* Default to 21:9 ratio if cropped, but will adjust dynamically */
+      background: #000;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      user-select: none;
+    }
+
+    .comparison-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .comparison-original {
+      z-index: 1;
+    }
+
+    .comparison-converted-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+      border-right: 1px solid white;
+    }
+
+    .comparison-converted {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .comparison-slider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: white;
+      z-index: 3;
+      cursor: ew-resize;
+    }
+
+    .comparison-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      color: #000;
+      font-size: 14px;
+      cursor: ew-resize;
+    }
+
+    .comparison-label {
+      position: absolute;
+      bottom: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .label-before {
+      right: 12px;
+    }
+
+    .label-after {
+      left: 12px;
+      z-index: 5;
+    }
+
+    .modal-stats {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      max-width: 800px;
+      justify-content: space-around;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+    }
+
+    .modal-stat-box {
+      text-align: center;
+    }
+
+    .modal-stat-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .modal-stat-val.saving-green {
+      color: var(--success);
+    }
+
+    .modal-stat-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* Toast Container */
+    #toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 260px;
+      animation: slideUp 0.25s ease;
+      max-width: 360px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .toast.success { border-left-color: var(--success); }
+    .toast.error { border-left-color: var(--error); }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="logo">🖼️</div>
+      <div>
+        <div class="brand-title">Image Optimization Suite</div>
+        <div class="brand-subtitle">Secure · Browser-Based · High Performance</div>
+      </div>
+    </div>
+    <div class="header-badge">
+      ⚡ Client-side Processing
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Sidebar Controls -->
+    <aside class="sidebar">
+      <div class="form-group">
+        <h3 class="section-title">Compression Settings</h3>
+      </div>
+
+      <div class="control-card">
+        <div class="form-group">
+          <label class="form-label" for="quality-slider">
+            JPEG Quality
+            <span class="value-indicator" id="quality-val">80%</span>
+          </label>
+          <input type="range" class="range-slider" id="quality-slider" min="10" max="100" value="80" oninput="updateQualityVal(this.value)">
+          <div style="font-size: 11px; color: var(--text-muted); line-height: 1.4;">
+            80% offers optimal balance of size and visual fidelity.
+          </div>
+        </div>
+      </div>
+
+      <div class="control-card">
+        <div class="form-group">
+          <label class="form-label" for="crop-select">Aspect Ratio & Cropping</label>
+          <select class="form-select" id="crop-select" onchange="toggleCropControls()">
+            <option value="none">Original (No Cropping)</option>
+            <option value="ctc-banner" selected>CTC Featured Banner (1008x432 center slice of 1024x1024)</option>
+            <option value="21-9">Center Crop to 21:9</option>
+            <option value="16-9">Center Crop to 16:9</option>
+            <option value="1-1">Center Crop to 1:1</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="alignment-group" style="display:none;">
+          <label class="form-label" for="crop-align">Crop Vertical Alignment</label>
+          <select class="form-select" id="crop-align">
+            <option value="center" selected>Center</option>
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-card">
+        <div class="form-group">
+          <label class="checkbox-group">
+            <input type="checkbox" id="resize-check" onchange="toggleResizeControls()">
+            <span>Constraint Output Size</span>
+          </label>
+        </div>
+        <div class="form-group" id="resize-controls" style="display:none;">
+          <label class="form-label" for="resize-width">Maximum Width (pixels)</label>
+          <input type="number" class="form-input" id="resize-width" value="1200" min="100" max="8000">
+          <div style="font-size: 11px; color: var(--text-muted);">
+            Aspect ratio is automatically locked to maintain proportions.
+          </div>
+        </div>
+      </div>
+
+      <div class="control-card">
+        <div class="form-group">
+          <label class="form-label" for="filename-suffix">Filename Suffix</label>
+          <input type="text" class="form-input" id="filename-suffix" placeholder="e.g. -optimized">
+          <div style="font-size: 11px; color: var(--text-muted);">
+            Appended to output file name (e.g. photo-optimized.jpg)
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-actions">
+        <button class="btn btn-primary" id="btn-convert-all" onclick="convertAll()" disabled>
+          ✨ Convert Queue
+        </button>
+        <button class="btn btn-success" id="btn-download-all" onclick="downloadAll()" disabled>
+          📦 Download All (.ZIP)
+        </button>
+        <button class="btn btn-secondary" id="btn-clear-queue" onclick="clearQueue()" disabled>
+          🗑 Clear Queue
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content/Queue -->
+    <main class="workspace">
+      <!-- Drop Zone -->
+      <div class="drop-zone" id="drop-zone" onclick="triggerFilePicker()">
+        <span class="drop-zone-icon">📤</span>
+        <div class="drop-zone-title">Drag & Drop PNG files here</div>
+        <div class="drop-zone-desc">or click to browse from your computer (Multiple files supported)</div>
+        <input type="file" id="file-picker" accept="image/png" multiple style="display:none;" onchange="handleFileSelection(event)">
+      </div>
+
+      <!-- Queue Box -->
+      <div class="queue-container">
+        <div class="queue-header">
+          <h3 class="queue-title">Conversion Queue</h3>
+          <span class="queue-stats" id="queue-stats">0 files · 0 KB total</span>
+        </div>
+
+        <div class="queue-list" id="queue-list">
+          <div class="queue-empty" id="queue-empty">
+            <span class="queue-empty-icon">📁</span>
+            <div style="font-weight:600; font-size: 14px; margin-bottom: 4px; color: var(--text-secondary);">Your queue is empty</div>
+            <div style="font-size:12px;">Add PNG images above to configure quality and start conversion.</div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Comparison Modal -->
+  <div class="modal" id="comparison-modal" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-filename">Comparison Slider</h3>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="comparison-container" id="comparison-container">
+          <!-- Original Image (Bottom Layer) -->
+          <img src="" class="comparison-img comparison-original" id="modal-img-orig" alt="Original Image">
+          <span class="comparison-label label-before">Original PNG</span>
+
+          <!-- Converted Image (Top Layer) -->
+          <div class="comparison-converted-wrap" id="modal-img-conv-wrap">
+            <img src="" class="comparison-converted" id="modal-img-conv" alt="Converted Image">
+            <span class="comparison-label label-after">Optimized JPG</span>
+          </div>
+
+          <!-- Vertical Slider Bar -->
+          <div class="comparison-slider" id="comparison-slider">
+            <div class="comparison-handle">↔</div>
+          </div>
+        </div>
+
+        <div class="modal-stats">
+          <div class="modal-stat-box">
+            <div class="modal-stat-val" id="modal-size-orig">0 KB</div>
+            <div class="modal-stat-lbl">Original PNG Size</div>
+          </div>
+          <div class="modal-stat-box">
+            <div class="modal-stat-val" id="modal-size-conv">0 KB</div>
+            <div class="modal-stat-lbl">Optimized JPG Size</div>
+          </div>
+          <div class="modal-stat-box">
+            <div class="modal-stat-val saving-green" id="modal-savings">-0%</div>
+            <div class="modal-stat-lbl">File size reduction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script>
+    // State Manager
+    const STATE = {
+      files: [],
+      quality: 0.8,
+      isDraggingSlider: false
+    };
+
+    // DOM Setup
+    const dropZone = document.getElementById('drop-zone');
+    const queueList = document.getElementById('queue-list');
+    const queueEmpty = document.getElementById('queue-empty');
+    const queueStats = document.getElementById('queue-stats');
+    const btnConvertAll = document.getElementById('btn-convert-all');
+    const btnDownloadAll = document.getElementById('btn-download-all');
+    const btnClearQueue = document.getElementById('btn-clear-queue');
+
+    // Drag and Drop registration
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, e => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, e => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+      }, false);
+    });
+
+    dropZone.addEventListener('drop', e => {
+      const dt = e.dataTransfer;
+      const files = Array.from(dt.files).filter(file => file.type === 'image/png' || file.name.toLowerCase().endsWith('.png'));
+      addFilesToQueue(files);
+    });
+
+    function triggerFilePicker() {
+      document.getElementById('file-picker').click();
+    }
+
+    function handleFileSelection(e) {
+      const files = Array.from(e.target.files).filter(file => file.type === 'image/png' || file.name.toLowerCase().endsWith('.png'));
+      addFilesToQueue(files);
+      e.target.value = ''; // Reset file input so same file can be chosen again
+    }
+
+    function updateQualityVal(val) {
+      document.getElementById('quality-val').innerText = val + '%';
+      STATE.quality = val / 100;
+    }
+
+    function toggleCropControls() {
+      const val = document.getElementById('crop-select').value;
+      const alignGroup = document.getElementById('alignment-group');
+      if (val !== 'none' && val !== 'ctc-banner') {
+        alignGroup.style.display = 'flex';
+      } else {
+        alignGroup.style.display = 'none';
+      }
+    }
+
+    function toggleResizeControls() {
+      const checked = document.getElementById('resize-check').checked;
+      document.getElementById('resize-controls').style.display = checked ? 'flex' : 'none';
+    }
+
+    function addFilesToQueue(fileList) {
+      if (fileList.length === 0) return;
+
+      fileList.forEach(file => {
+        // Prevent duplicate loads
+        if (STATE.files.some(f => f.file.name === file.name && f.file.size === file.size)) {
+          return;
+        }
+
+        const id = 'img_' + Math.random().toString(36).substr(2, 9);
+        const srcUrl = URL.createObjectURL(file);
+        
+        const item = {
+          id: id,
+          file: file,
+          srcUrl: srcUrl,
+          status: 'pending',
+          originalSize: file.size,
+          convertedSize: 0,
+          convertedUrl: null,
+          convertedBlob: null,
+          errorMsg: null,
+          imgElement: null
+        };
+
+        // Preload image object
+        const img = new Image();
+        img.src = srcUrl;
+        img.onload = () => {
+          item.imgElement = img;
+          renderQueue();
+        };
+
+        STATE.files.push(item);
+      });
+
+      renderQueue();
+      showToast(`Added ${fileList.length} files to queue.`);
+    }
+
+    function formatSize(bytes) {
+      if (bytes === 0) return '0 B';
+      const k = 1024;
+      const sizes = ['B', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function renderQueue() {
+      if (STATE.files.length === 0) {
+        queueEmpty.style.display = 'flex';
+        queueList.querySelectorAll('.queue-item').forEach(el => el.remove());
+        queueStats.innerText = '0 files · 0 KB total';
+        btnConvertAll.disabled = true;
+        btnDownloadAll.disabled = true;
+        btnClearQueue.disabled = true;
+        return;
+      }
+
+      queueEmpty.style.display = 'none';
+      
+      // Update stats
+      const totalSize = STATE.files.reduce((acc, f) => acc + f.originalSize, 0);
+      queueStats.innerText = `${STATE.files.length} files · ${formatSize(totalSize)} total`;
+
+      btnConvertAll.disabled = !STATE.files.some(f => f.status === 'pending' || f.status === 'error');
+      btnDownloadAll.disabled = !STATE.files.some(f => f.status === 'success');
+      btnClearQueue.disabled = false;
+
+      // Render queue rows
+      STATE.files.forEach(item => {
+        let rowEl = document.getElementById(item.id);
+        const isNew = !rowEl;
+
+        if (isNew) {
+          rowEl = document.createElement('div');
+          rowEl.id = item.id;
+          rowEl.className = 'queue-item';
+        }
+
+        let statusText = 'Ready';
+        if (item.status === 'processing') statusText = 'Optimizing...';
+        else if (item.status === 'success') statusText = 'Optimized';
+        else if (item.status === 'error') statusText = 'Error';
+
+        let sizeDiffHtml = '';
+        if (item.status === 'success') {
+          const savings = Math.max(0, Math.round(((item.originalSize - item.convertedSize) / item.originalSize) * 100));
+          sizeDiffHtml = `<div class="savings-badge">-${savings}%</div>`;
+        }
+
+        const newSizeText = item.status === 'success' ? formatSize(item.convertedSize) : '—';
+        const dimensionsText = item.imgElement ? `${item.imgElement.naturalWidth} × ${item.imgElement.naturalHeight}` : 'Loading...';
+
+        rowEl.innerHTML = `
+          <div class="img-thumb-container">
+            <img src="${item.status === 'success' ? item.convertedUrl : item.srcUrl}" class="img-thumb" alt="thumbnail">
+          </div>
+          <div class="item-name-col">
+            <div class="item-name" title="${item.file.name}">${item.file.name}</div>
+            <div class="item-meta">${dimensionsText} · PNG</div>
+          </div>
+          <div class="item-size">${formatSize(item.originalSize)}</div>
+          <div class="item-status status-${item.status}">
+            <span class="status-dot"></span>
+            <span>${statusText}</span>
+          </div>
+          <div class="item-size" style="display:flex; align-items:center; gap:8px;">
+            <span>${newSizeText}</span>
+            ${sizeDiffHtml}
+          </div>
+          <div class="item-actions">
+            ${item.status === 'success' ? `
+              <button class="action-icon-btn btn-action-view" onclick="openPreview('${item.id}')" title="Preview Quality Comparison">
+                👁️
+              </button>
+              <button class="action-icon-btn" onclick="downloadSingle('${item.id}')" title="Download JPG">
+                ⬇️
+              </button>
+            ` : ''}
+            <button class="action-icon-btn btn-action-delete" onclick="removeItem('${item.id}')" title="Remove File">
+              ✕
+            </button>
+          </div>
+        `;
+
+        if (isNew) {
+          queueList.appendChild(rowEl);
+        }
+      });
+
+      // Remove any DOM elements that are no longer in state
+      queueList.querySelectorAll('.queue-item').forEach(el => {
+        if (!STATE.files.some(f => f.id === el.id)) {
+          el.remove();
+        }
+      });
+    }
+
+    function removeItem(id) {
+      const idx = STATE.files.findIndex(f => f.id === id);
+      if (idx !== -1) {
+        const item = STATE.files[idx];
+        URL.revokeObjectURL(item.srcUrl);
+        if (item.convertedUrl) URL.revokeObjectURL(item.convertedUrl);
+        STATE.files.splice(idx, 1);
+        renderQueue();
+      }
+    }
+
+    function clearQueue() {
+      STATE.files.forEach(item => {
+        URL.revokeObjectURL(item.srcUrl);
+        if (item.convertedUrl) URL.revokeObjectURL(item.convertedUrl);
+      });
+      STATE.files = [];
+      renderQueue();
+      showToast('Queue cleared.');
+    }
+
+    // Canvas Crop Helper
+    function cropAndResizeImage(item) {
+      return new Promise((resolve, reject) => {
+        const img = item.imgElement;
+        if (!img) return reject(new Error('Image metadata not loaded.'));
+
+        const cropMode = document.getElementById('crop-select').value;
+        const cropAlign = document.getElementById('crop-align').value;
+        const resizeChecked = document.getElementById('resize-check').checked;
+        const maxW = parseInt(document.getElementById('resize-width').value) || 1200;
+
+        let sx = 0, sy = 0;
+        let sw = img.naturalWidth;
+        let sh = img.naturalHeight;
+        let dw, dh;
+
+        if (cropMode === 'ctc-banner') {
+          // Hardcoded Center crop for Classy Travel Couples Banner: 1008x432 center slice of 1024x1024
+          // If source is not exactly 1024x1024, we scale/offset proportionally.
+          if (img.naturalWidth === 1024 && img.naturalHeight === 1024) {
+            sx = 8;
+            sy = 296;
+            sw = 1008;
+            sh = 432;
+          } else {
+            // General center crop to 21:9 ratio (1008/432 = 2.333)
+            const targetRatio = 1008 / 432;
+            const currentRatio = img.naturalWidth / img.naturalHeight;
+            if (currentRatio > targetRatio) {
+              sw = img.naturalHeight * targetRatio;
+              sh = img.naturalHeight;
+              sx = (img.naturalWidth - sw) / 2;
+              sy = 0;
+            } else {
+              sw = img.naturalWidth;
+              sh = img.naturalWidth / targetRatio;
+              sx = 0;
+              sy = (img.naturalHeight - sh) / 2;
+            }
+          }
+          dw = 1008;
+          dh = 432;
+        } else if (cropMode !== 'none') {
+          // General Crops
+          let targetRatio = 1;
+          if (cropMode === '21-9') targetRatio = 21 / 9;
+          else if (cropMode === '16-9') targetRatio = 16 / 9;
+          else if (cropMode === '1-1') targetRatio = 1;
+
+          const currentRatio = img.naturalWidth / img.naturalHeight;
+
+          if (currentRatio > targetRatio) {
+            // Image is wider than target ratio: crop horizontally
+            sw = img.naturalHeight * targetRatio;
+            sh = img.naturalHeight;
+            sy = 0;
+            if (cropAlign === 'left') sx = 0;
+            else if (cropAlign === 'right') sx = img.naturalWidth - sw;
+            else sx = (img.naturalWidth - sw) / 2; // center
+          } else {
+            // Image is taller than target ratio: crop vertically
+            sw = img.naturalWidth;
+            sh = img.naturalWidth / targetRatio;
+            sx = 0;
+            if (cropAlign === 'top') sy = 0;
+            else if (cropAlign === 'bottom') sy = img.naturalHeight - sh;
+            else sy = (img.naturalHeight - sh) / 2; // center
+          }
+          dw = sw;
+          dh = sh;
+        } else {
+          // No cropping
+          dw = sw;
+          dh = sh;
+        }
+
+        // Apply width scaling constraints
+        if (resizeChecked && dw > maxW) {
+          const ratio = maxW / dw;
+          dw = maxW;
+          dh = Math.round(dh * ratio);
+        }
+
+        // Setup HTML Canvas
+        const canvas = document.createElement('canvas');
+        canvas.width = dw;
+        canvas.height = dh;
+        const ctx = canvas.getContext('2d');
+
+        if (!ctx) return reject(new Error('Canvas context not available.'));
+
+        // Handle transparency by painting a white background first (JPEG doesn't support alpha)
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, dw, dh);
+
+        // Draw cropped & scaled slice
+        ctx.drawImage(img, sx, sy, sw, sh, 0, 0, dw, dh);
+
+        // Export to Blob
+        canvas.toBlob(blob => {
+          if (blob) {
+            resolve(blob);
+          } else {
+            reject(new Error('Canvas conversion failed.'));
+          }
+        }, 'image/jpeg', STATE.quality);
+      });
+    }
+
+    async function convertSingle(item) {
+      item.status = 'processing';
+      renderQueue();
+
+      try {
+        const blob = await cropAndResizeImage(item);
+        
+        if (item.convertedUrl) URL.revokeObjectURL(item.convertedUrl);
+
+        item.status = 'success';
+        item.convertedBlob = blob;
+        item.convertedSize = blob.size;
+        item.convertedUrl = URL.createObjectURL(blob);
+      } catch (err) {
+        console.error(err);
+        item.status = 'error';
+        item.errorMsg = err.message;
+      }
+      renderQueue();
+    }
+
+    async function convertAll() {
+      const itemsToConvert = STATE.files.filter(f => f.status === 'pending' || f.status === 'error');
+      if (itemsToConvert.length === 0) return;
+
+      btnConvertAll.disabled = true;
+      showToast(`Converting ${itemsToConvert.length} images...`);
+
+      // Convert sequentially to prevent freezing the main threat
+      for (const item of itemsToConvert) {
+        await convertSingle(item);
+      }
+
+      showToast('All conversions completed successfully!', 'success');
+      renderQueue();
+    }
+
+    function getOutputFilename(originalName) {
+      const suffix = document.getElementById('filename-suffix').value.trim();
+      const dotIdx = originalName.lastIndexOf('.');
+      const baseName = dotIdx !== -1 ? originalName.substring(0, dotIdx) : originalName;
+      return `${baseName}${suffix}.jpg`;
+    }
+
+    function downloadSingle(id) {
+      const item = STATE.files.find(f => f.id === id);
+      if (item && item.status === 'success') {
+        const a = document.createElement('a');
+        a.href = item.convertedUrl;
+        a.download = getOutputFilename(item.file.name);
+        a.click();
+      }
+    }
+
+    async function downloadAll() {
+      const successItems = STATE.files.filter(f => f.status === 'success');
+      if (successItems.length === 0) return;
+
+      showToast('Generating ZIP file...');
+      const zip = new JSZip();
+
+      successItems.forEach(item => {
+        const fileName = getOutputFilename(item.file.name);
+        zip.file(fileName, item.convertedBlob);
+      });
+
+      try {
+        const zipBlob = await zip.generateAsync({ type: 'blob' });
+        const url = URL.createObjectURL(zipBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'optimized-jpg-images.zip';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('ZIP file downloaded successfully!', 'success');
+      } catch (err) {
+        console.error(err);
+        showToast('ZIP generation failed.', 'error');
+      }
+    }
+
+    // Modal & Preview Slider
+    function openPreview(id) {
+      const item = STATE.files.find(f => f.id === id);
+      if (!item || item.status !== 'success') return;
+
+      document.getElementById('modal-filename').innerText = `Visual Inspection — ${item.file.name}`;
+      
+      const imgOrig = document.getElementById('modal-img-orig');
+      const imgConv = document.getElementById('modal-img-conv');
+      
+      imgOrig.src = item.srcUrl;
+      imgConv.src = item.convertedUrl;
+
+      // Size metrics
+      document.getElementById('modal-size-orig').innerText = formatSize(item.originalSize);
+      document.getElementById('modal-size-conv').innerText = formatSize(item.convertedSize);
+      
+      const savings = Math.max(0, Math.round(((item.originalSize - item.convertedSize) / item.originalSize) * 100));
+      document.getElementById('modal-savings').innerText = `-${savings}%`;
+
+      // Set aspect ratio of comparison container dynamically
+      const container = document.getElementById('comparison-container');
+      const wrap = document.getElementById('modal-img-conv-wrap');
+      const slider = document.getElementById('comparison-slider');
+      
+      // Reset slider to middle 50%
+      wrap.style.width = '50%';
+      slider.style.left = '50%';
+
+      imgOrig.onload = () => {
+        const width = imgOrig.naturalWidth;
+        const height = imgOrig.naturalHeight;
+        container.style.aspectRatio = `${width} / ${height}`;
+      };
+
+      document.getElementById('comparison-modal').classList.add('active');
+      setupSliderDrag();
+    }
+
+    function closeModal() {
+      document.getElementById('comparison-modal').classList.remove('active');
+    }
+
+    function closeModalOnOutsideClick(e) {
+      if (e.target.id === 'comparison-modal') {
+        closeModal();
+      }
+    }
+
+    function setupSliderDrag() {
+      const container = document.getElementById('comparison-container');
+      const slider = document.getElementById('comparison-slider');
+      const wrap = document.getElementById('modal-img-conv-wrap');
+
+      function moveSlider(clientX) {
+        const rect = container.getBoundingClientRect();
+        const x = clientX - rect.left;
+        let percentage = (x / rect.width) * 100;
+        
+        if (percentage < 0) percentage = 0;
+        if (percentage > 100) percentage = 100;
+
+        slider.style.left = `${percentage}%`;
+        wrap.style.width = `${percentage}%`;
+      }
+
+      // Touch events
+      container.addEventListener('touchmove', e => {
+        if (e.touches.length > 0) {
+          moveSlider(e.touches[0].clientX);
+        }
+      });
+
+      // Mouse events
+      function onMouseMove(e) {
+        moveSlider(e.clientX);
+      }
+
+      function onMouseUp() {
+        window.removeEventListener('mousemove', onMouseMove);
+        window.removeEventListener('mouseup', onMouseUp);
+      }
+
+      slider.addEventListener('mousedown', e => {
+        e.preventDefault();
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
+      });
+
+      // Allow clicking on container to move slider directly
+      container.addEventListener('click', e => {
+        if (e.target.className !== 'comparison-handle') {
+          moveSlider(e.clientX);
+        }
+      });
+    }
+
+    // Toasts helper
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.innerHTML = msg;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.animation = 'slideUp 0.25s ease reverse';
+        setTimeout(() => toast.remove(), 250);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

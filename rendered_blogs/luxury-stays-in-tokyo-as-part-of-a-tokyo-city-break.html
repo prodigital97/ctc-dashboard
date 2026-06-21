@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Stays in Tokyo: The Ultimate Couple's Guide to an Urban Escape</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111111;
+    }
+  </style>
+</head>
+<body>
+  
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CTC SANTORINI BLOG — DARK LUXURY THEME
+   Matches classytravelcouples.com homepage
+   ============================================ */
+/* Kill Astra white wrappers on all breakpoints */
+.ast-article-single,
+.entry-content,
+.entry-header,
+.ast-post-format-,
+.site-main .ast-article-single,
+.elementor-widget-html {
+  background: #111111 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Also target the post title area Astra renders outside Elementor */
+.entry-title,
+.ast-single-post-order {
+  background: #111111 !important;
+}
+#ctc-post {
+  background: #111111 !important;
+  color: #E8E2D8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 1.85;
+  font-size: 19px;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100%;
+  overflow: hidden;
+}
+#ctc-post * { box-sizing: border-box; }
+
+/* Typography */
+#ctc-post h1, #ctc-post h2 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1.2;
+}
+#ctc-post h2 { font-size: 38px; margin: 50px 0 20px; }
+#ctc-post h3 {
+  font-family: 'Playfair Display', serif;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 35px 0 14px;
+}
+#ctc-post h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin: 40px 0 20px;
+}
+#ctc-post p {
+  color: #D0C8BC;
+  margin-bottom: 22px;
+}
+#ctc-post p, #ctc-post li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+#ctc-post ul, #ctc-post ol {
+  padding-left: 28px;
+  margin-bottom: 22px;
+}
+#ctc-post strong { color: #FFFFFF; }
+#ctc-post a { color: #C9A86C; text-decoration: none; }
+
+/* Section Label (gold tag) */
+#ctc-post .section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-top: 50px;
+  margin-bottom: 8px;
+}
+
+/* Gold Divider */
+#ctc-post .gold-divider {
+  border: none;
+  border-bottom: 1px solid rgba(201,168,108,0.3);
+  margin: 50px 0;
+}
+
+/* Drop Cap */
+#ctc-post .drop-cap::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  float: left;
+  line-height: 0.8;
+  margin: 4px 12px 0 0;
+  color: #C9A86C;
+  font-weight: 700;
+}
+
+/* Content Wrapper */
+#ctc-post .content-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* Images */
+#ctc-post img { max-width: 100%; height: auto; display: block; border-radius: 4px; }
+#ctc-post .inline-image { margin: 35px 0 8px; }
+#ctc-post .inline-image img { width: 100%; max-height: 480px; object-fit: cover; }
+#ctc-post .image-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  font-style: italic;
+  margin: 8px 0 30px;
+}
+
+/* ===== HOTEL CARDS ===== */
+#ctc-post .hotel-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid #C9A86C;
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .hotel-tier {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+#ctc-post .hotel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .hotel-location {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 14px;
+}
+#ctc-post .hotel-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 16px; }
+#ctc-post .hotel-detail {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* ===== RESTAURANT CARDS ===== */
+#ctc-post .restaurant-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .r-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+#ctc-post .r-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+  margin-bottom: 12px;
+}
+#ctc-post .restaurant-card p { font-size: 17px; color: #C0B8AC; margin-bottom: 14px; }
+#ctc-post .r-order {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #D0C8BC;
+  line-height: 1.5;
+}
+
+/* ===== INSTAGRAM SPOTS ===== */
+#ctc-post .ig-spot {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+#ctc-post .spot-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #C9A86C;
+  margin-bottom: 10px;
+}
+#ctc-post .ig-spot p { font-size: 17px; color: #C0B8AC; margin-bottom: 12px; }
+#ctc-post .spot-tip {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8A8578;
+}
+
+/* ===== FOOD ITEMS ===== */
+#ctc-post .food-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .food-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+#ctc-post .food-desc { font-size: 16px; color: #C0B8AC; }
+
+/* ===== TIP BOXES ===== */
+#ctc-post .tip-box {
+  background: rgba(201,168,108,0.06);
+  border: 1px solid rgba(201,168,108,0.2);
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+#ctc-post .tip-box p { color: #D0C8BC; margin-bottom: 0; }
+
+/* ===== FAQ SECTION ===== */
+#ctc-post .faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0;
+}
+#ctc-post .faq-q {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+#ctc-post .faq-a { color: #C0B8AC; }
+
+/* ===== FOOTER ===== */
+#ctc-post footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* ===== HERO (CLASS-BASED FOR RESPONSIVE) ===== */
+#ctc-post .ctc-hero {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+#ctc-post .ctc-hero-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+#ctc-post .ctc-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(17,17,17,0.1) 0%, rgba(17,17,17,0.7) 100%);
+}
+#ctc-post .ctc-hero-text {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 50px 40px 60px;
+  max-width: 900px;
+}
+#ctc-post .ctc-hero-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #C9A86C;
+  margin-bottom: 16px;
+}
+#ctc-post .ctc-hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+}
+#ctc-post .ctc-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75) !important;
+  font-style: italic;
+  max-width: 580px;
+  margin: 0;
+}
+#ctc-post .ctc-hero-meta {
+  margin-top: 24px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4) !important;
+  letter-spacing: 3px;
+}
+
+/* ===== RESPONSIVE — TABLET ===== */
+@media (max-width: 1024px) {
+  #ctc-post .ctc-hero { height: 450px; }
+  #ctc-post .ctc-hero-img { height: 450px; }
+  #ctc-post .ctc-hero-h1 { font-size: 38px; }
+  #ctc-post .ctc-hero-sub { font-size: 18px; }
+  #ctc-post .ctc-hero-text { padding: 40px 30px 50px; }
+  #ctc-post .content-wrapper { padding: 30px 24px; }
+  #ctc-post h2 { font-size: 32px; }
+  #ctc-post h3 { font-size: 24px; }
+}
+
+/* ===== RESPONSIVE — MOBILE ===== */
+@media (max-width: 768px) {
+  #ctc-post .ctc-hero { height: 400px; }
+  #ctc-post .ctc-hero-img { height: 400px; }
+  #ctc-post .ctc-hero-h1 { font-size: 28px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-sub { font-size: 16px; max-width: 100%; }
+  #ctc-post .ctc-hero-tag { font-size: 10px; letter-spacing: 3px; margin-bottom: 10px; }
+  #ctc-post .ctc-hero-meta { font-size: 10px; margin-top: 16px; }
+  #ctc-post .ctc-hero-text { padding: 24px 20px 36px; }
+  #ctc-post .content-wrapper { padding: 24px 16px; }
+  #ctc-post h2 { font-size: 26px; margin: 35px 0 16px; }
+  #ctc-post h3 { font-size: 20px; }
+  #ctc-post p { font-size: 17px; }
+  #ctc-post .hotel-name, #ctc-post .r-name { font-size: 20px; }
+  #ctc-post .hotel-card, #ctc-post .restaurant-card, #ctc-post .ig-spot, #ctc-post .food-item, #ctc-post .tip-box {
+    padding: 18px 16px;
+  }
+  #ctc-post ul, #ctc-post ol {
+    padding-left: 20px;
+  }
+  #ctc-post .drop-cap::first-letter { font-size: 52px; }
+  #ctc-post .inline-image img { max-height: 300px; }
+}
+
+/* ===== RESPONSIVE — SMALL MOBILE ===== */
+@media (max-width: 480px) {
+  #ctc-post .ctc-hero { height: 350px; }
+  #ctc-post .ctc-hero-img { height: 350px; }
+  #ctc-post .ctc-hero-h1 { font-size: 24px; }
+  #ctc-post .ctc-hero-sub { font-size: 15px; }
+  #ctc-post .ctc-hero-text { padding: 20px 16px 28px; }
+  #ctc-post h2 { font-size: 24px; }
+  #ctc-post p { font-size: 16px; }
+}
+</style>
+
+<div id="ctc-post">
+  <article class="content-wrapper">
+    <div class="ctc-main-content">
+      <div class="section-label">Destinations</div>
+<h2 id="section-neon-valleys-skyline-sanctuaries-tokyos-modern-romance">Neon Valleys & Skyline Sanctuaries: Tokyo's Modern Romance</h2><p class="drop-cap">Walking through Tokyo at night is like stepping onto a movie set. The neon lights of Shinjuku reflect in rain-slicked streets, high-speed trains hum quietly overhead, and the smell of roasting binchotan charcoal wafts from narrow alleyways. For couples planning a city break, Tokyo is a thrilling, sensory-rich adventure. But it can also be overwhelming—the sheer scale of the city, the complex rail network, and the language barrier can easily cause travel friction. The key to a successful Tokyo escape is balancing the high-energy urban exploration with stays in serene skyline sanctuaries that feel completely insulated from the street-level rush. By selecting the right neighborhoods and understanding local etiquette, you can turn a busy city trip into a deeply romantic, effortless urban getaway.</p>
+
+
+        <!-- ITINERARY AT-A-GLANCE & BUDGET CARD -->
+        <div class="ctc-summary-card">
+          <div class="ctc-summary-title">ITINERARY AT-A-GLANCE</div>
+          <div class="ctc-summary-grid">
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Best Season</div>
+              <div class="ctc-summary-val">Year-Round</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Couple Style</div>
+              <div class="ctc-summary-val">Romantic Luxury</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Rec. Duration</div>
+              <div class="ctc-summary-val">4 – 5 Nights</div>
+            </div>
+            <div class="ctc-summary-col">
+              <div class="ctc-summary-label">Est. Budget</div>
+              <div class="ctc-summary-val">€300 – €700 / day</div>
+            </div>
+          </div>
+        </div>
+  
+
+
+
+<div class="section-label">Destinations</div>
+<h2 id="section-romantic-neighborhood-guide">Romantic Neighborhood Guide</h2><h3>Omotesando & Aoyama</h3><p class="drop-cap">Often described as Tokyo's architectural playground, these tree-lined avenues are home to striking modern buildings, high-end boutiques, and quiet back-alleys. Walk hand-in-hand past the glass structures, stop for a quiet espresso at a hidden garden café like <strong>Café Kitsuné</strong>, and wander through the small design shops of Aoyama. It is chic, quiet, and highly walkable.</p><h3>Daikanyama</h3><p class="drop-cap">Known as Tokyo’s "Little Brooklyn," Daikanyama is a low-rise, leafy neighborhood filled with independent boutiques, craft coffee bars, and design-forward bakeries. The center of the neighborhood is the stunning <strong>T-Site Bookstore</strong>—a beautiful, wood-and-glass architectural landmark where you can browse art books, sit in a plush leather chair at the Anjin Lounge, and enjoy a quiet cocktail.</p><h3>Yanaka</h3><p class="drop-cap">For a taste of historic Tokyo, spend an afternoon in Yanaka. This quiet neighborhood escaped the bombs of WWII, leaving its narrow streets, wooden temples, and historic craft shops intact. It is a peaceful contrast to Shibuya, perfect for buying traditional paper crafts and eating sweet red-bean pastries from family-run stalls.</p>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-the-48-hour-urban-itinerary">The 48-Hour Urban Itinerary</h2><h3>Day 1: Skyline Views & Digital Arts</h3><ul>
+<div class="tip-box">
+  <div class="tip-label">Morning</div>
+  <p>Start early at the Meiji Jingu Shrine in Harajuku, walking through the massive cedar forest to catch a traditional Shinto wedding procession. Step into Omotesando for a coffee and pastry.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Afternoon</div>
+  <p>Explore the immersive digital art installations at <strong>teamLab Planets</strong> in Toyosu, walking barefoot through water filled with floating projections of koi fish. (Tip: Book the earliest morning slot to avoid the tourist rush).</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Evening</div>
+  <p>Head to Shibuya Sky at sunset for panoramic views of Shibuya Crossing and the city skyline. Finish the night at a private, 8-seat sushi counter in Ginza.</p>
+</div></ul><h3>Day 2: Historic Temples & Riverside Walks</h3><ul>
+<div class="tip-box">
+  <div class="tip-label">Morning</div>
+  <p>Visit Senso-ji, Tokyo’s oldest temple in Asakusa. Arrive by 8:30 AM before the tour buses block the historic Kaminarimon Gate.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Afternoon</div>
+  <p>Take the subway to Nakameguro. Walk along the canal of the Meguro River, stopping at small vintage shops and tea salons. In the spring, this canal is covered by a canopy of pink cherry blossoms.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Evening</div>
+  <p>Savor a high-end Kaiseki dinner (traditional multi-course seasonal dining) at a quiet ryokan-style restaurant, followed by skyline cocktails.</p>
+</div></ul>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-rooftop-bars-nightlife">Rooftop Bars & Nightlife</h2><p>Tokyo's cocktail scene is legendary. For a classic, nostalgic experience, head to the **New York Bar** at the Park Hyatt Tokyo (Shinjuku) to listen to live jazz against floor-to-ceiling glass views of the neon skyline. For a modern, stylish vibe, visit the **Gold Bar at the EDITION** (Toranomon)—an intimate, dark-wood salon serving custom craft cocktails. The **Rooftop Bar at Andaz Tokyo** (Toranomon Hills) offers a semi-open terrace with spectacular views of Tokyo Tower glowing red against the night sky.</p>
+
+<div class="section-label">Destinations</div>
+<h2 id="section-boutique-city-hideaways">Boutique City Hideaways</h2><p>INSIDER TIP: Tokyo luxury hotels are divided into two styles: traditional, quiet sanctuaries vs. modern, green design hubs. Choose based on your couple profile:</p><ul><li><strong>Aman Tokyo (Otemachi)</strong><br>Perched on the top six floors of the Otemachi Tower, this hotel is a serene, monumental temple of basalt stone and washi paper. The rooms feature massive traditional wood-and-paper screens and deep stone soaking tubs (*furo*) positioned directly next to the windows. The basalt infinity pool offers views of Mount Fuji on a clear day. Price range: $1,400 - $2,400 USD per night.</li><li><strong>The Tokyo EDITION, Toranomon</strong><br>Designed by legendary architect Kengo Kuma, this hotel features a lobby filled with over 500 plants, creating a lush jungle vibe high above the city. Book a Premier Suite with a private outdoor terrace—a rare luxury in Tokyo that lets you sit outside with a glass of champagne, framing a direct view of Tokyo Tower. Price range: $900 - $1,500 USD per night.</li></ul>
+
+<div class="section-label">Practicalities</div>
+<h2 id="practicalities">Urban Practicalities for Couples</h2><ul>
+<div class="tip-box">
+  <div class="tip-label">Subway Navigation</div>
+  <p>Download the **Pasmo** or **Suica** card directly to your Apple Wallet before leaving home. It lets you tap through subway gates seamlessly. Avoid using taxis for long distances as city traffic is slow and fares are high.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">The Omakase Booking Window</div>
+  <p>Tokyo's finest restaurants have very limited seats (often 8 to 10). High-end sushi and yakitori spots open their booking windows on platforms like **Omakase.in** or **Tableall** exactly 30 to 60 days in advance. Coordinate with your hotel concierge to book these the minute they open.</p>
+</div>
+<div class="tip-box">
+  <div class="tip-label">Trash Etiquette</div>
+  <p>Tokyo has zero public trash bins on the streets. Carry a small plastic bag in your pocket or daypack to collect your trash, and empty it when you return to your hotel room.</p>
+</div></ul>
+      
+      <div class="gold-divider"></div>
+    </div>
+  </article>
+</div>
+
+</body>
+</html>

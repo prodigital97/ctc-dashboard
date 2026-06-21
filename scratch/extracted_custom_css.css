@@ -1,0 +1,349 @@
+
+			/* Nav link colours */
+.main-header-menu a {
+  color: #888888 !important;
+  font-size: 11px !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+}
+.main-header-menu a:hover,
+.main-header-menu .current-menu-item a {
+  color: #C9A86C !important;
+}
+
+/* Header background */
+#masthead {
+  background: #0A0A0A !important;
+  border-bottom: 1px solid #1E1E1E !important;
+}
+
+/* Full width content */
+.entry-content,
+.entry-content > div,
+.elementor-widget-html {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+.ast-article-single .entry-content,
+.ast-container,
+.site-content .ast-container {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Kill ALL footer elements */
+.site-footer,
+.footer-bar-section,
+.ast-above-footer,
+.ast-above-footer-bar,
+.ast-middle-footer,
+.ast-middle-footer-bar,
+.ast-below-footer,
+.ast-below-footer-bar,
+.ast-site-footer-wrap,
+.ast-footer-copyright,
+footer.site-footer,
+footer.site-footer * {
+  background: #111111 !important;
+  border-color: #1E1E1E !important;
+}
+
+/* Copyright text */
+.ast-footer-copyright,
+.ast-footer-copyright p,
+.ast-footer-copyright a,
+footer .ast-row,
+footer p {
+  color: #444444 !important;
+  font-size: 11px !important;
+  letter-spacing: 1px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+/* Hide Astra branding link */
+.ast-footer-copyright a[href*="astra"] {
+  display: none !important;
+}
+
+/* Hide empty widget rows */
+.ast-above-footer-section,
+.ast-middle-footer-section {
+  display: none !important;
+}
+/* ============================================
+   CTC MOBILE + TABLET RESPONSIVE FIX
+   Add to Appearance → Customise → Additional CSS
+   (append to existing CSS, don't replace)
+   ============================================ */
+
+@media (max-width: 1024px) {
+
+  /* HERO — fix font size on tablet */
+  .ctc-h1 { font-size: 72px !important; }
+  .ctc-script { font-size: 44px !important; }
+  .ctc-hero-content { padding: 120px 48px 80px !important; }
+
+  /* DESTINATIONS — 2 cols on tablet */
+  .ctc-dgrid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  .ctc-dc:first-child { grid-row: auto !important; }
+
+  /* ABOUT — stack on tablet */
+  .ctc-about { grid-template-columns: 1fr !important; }
+  .ctc-about-img { min-height: 320px !important; }
+
+  /* BLOG — 2 cols on tablet */
+  .ctc-bgrid { grid-template-columns: 1fr 1fr !important; }
+  .ctc-bc:first-child .ctc-bc-img { height: 220px !important; }
+
+  /* LEAD — stack on tablet */
+  .ctc-lead { grid-template-columns: 1fr !important; }
+  .ctc-lead-img { min-height: 280px !important; }
+
+  /* SHOP — 2 cols on tablet */
+  .ctc-sgrid { grid-template-columns: 1fr 1fr !important; }
+
+  /* TESTIMONIALS — 1 col on tablet */
+  .ctc-testi {
+    grid-template-columns: 1fr !important;
+    padding: 60px 48px !important;
+  }
+
+  /* INSTAGRAM — 3 cols on tablet */
+  .ctc-iggrid { grid-template-columns: repeat(3, 1fr) !important; }
+
+  /* SECTIONS padding */
+  .ctc-section { padding: 72px 48px !important; }
+  .ctc-lead-form { padding: 60px 48px !important; }
+  .ctc-about-text { padding: 60px 48px !important; }
+  .ctc-ig-in { padding: 0 48px !important; }
+}
+
+@media (max-width: 768px) {
+
+  /* HERO */
+  .ctc-h1 { font-size: 52px !important; line-height: 0.95 !important; }
+  .ctc-script { font-size: 34px !important; }
+  .ctc-hero-content {
+    padding: 100px 24px 60px !important;
+    max-width: 100% !important;
+  }
+  .ctc-sub { font-size: 14px !important; max-width: 100% !important; }
+  .ctc-btns { flex-direction: column !important; }
+  .ctc-btn-g, .ctc-btn-o { width: 100% !important; justify-content: center !important; }
+
+  /* STATS BAR — 2x2 grid */
+  .ctc-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .ctc-stat { border-right: none !important; border-bottom: 1px solid #1E1E1E !important; }
+  .ctc-stat-n { font-size: 30px !important; }
+
+  /* MARQUEE */
+  .ctc-mitem { font-size: 11px !important; padding: 0 16px !important; }
+
+  /* SECTIONS */
+  .ctc-section { padding: 56px 20px !important; }
+  .ctc-stitle { font-size: 44px !important; }
+  .ctc-dh, .ctc-bh { flex-direction: column !important; align-items: flex-start !important; }
+
+  /* DESTINATIONS — single column stack */
+  .ctc-dgrid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 3px !important;
+  }
+  .ctc-dc { height: 200px !important; }
+  .ctc-dc:first-child {
+    grid-row: auto !important;
+    height: 260px !important;
+  }
+  .ctc-dc:first-child .ctc-dc-n { font-size: 36px !important; }
+  .ctc-dc-n { font-size: 24px !important; }
+
+  /* ABOUT */
+  .ctc-about { grid-template-columns: 1fr !important; }
+  .ctc-about-img { min-height: 260px !important; }
+  .ctc-about-text {
+    padding: 40px 24px !important;
+  }
+  .ctc-about-text::before { display: none !important; }
+  .ctc-about-quote { font-size: 16px !important; }
+
+  /* BLOG — single column */
+  .ctc-bgrid {
+    grid-template-columns: 1fr !important;
+    gap: 3px !important;
+  }
+  .ctc-bc:first-child .ctc-bc-img,
+  .ctc-bc:not(:first-child) .ctc-bc-img { height: 200px !important; }
+  .ctc-bc:first-child .ctc-bc-title { font-size: 22px !important; }
+  .ctc-bc-body { padding: 20px !important; }
+
+  /* LEAD MAGNET */
+  .ctc-lead { grid-template-columns: 1fr !important; }
+  .ctc-lead-img { min-height: 200px !important; }
+  .ctc-lead-form { padding: 40px 24px !important; }
+  .ctc-lead-badge { top: 20px !important; left: 20px !important; }
+  .ctc-ebox { padding: 24px 20px !important; }
+
+  /* SHOP — single column */
+  .ctc-sgrid {
+    grid-template-columns: 1fr !important;
+    gap: 3px !important;
+  }
+  .ctc-pc-img { height: 200px !important; }
+
+  /* BANNER */
+  .ctc-banner { padding: 60px 24px !important; min-height: 300px !important; }
+  .ctc-banner-title { font-size: 48px !important; }
+  .ctc-banner-sub { font-size: 14px !important; }
+
+  /* TESTIMONIALS */
+  .ctc-testi {
+    grid-template-columns: 1fr !important;
+    padding: 48px 20px !important;
+    gap: 3px !important;
+  }
+  .ctc-tc { padding: 24px 20px !important; }
+  .ctc-tc-q { font-size: 15px !important; }
+
+  /* INSTAGRAM */
+  .ctc-ig { padding: 60px 0 !important; }
+  .ctc-ig-in { padding: 0 20px !important; }
+  .ctc-igh { flex-direction: column !important; gap: 12px !important; }
+  .ctc-iggrid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3px !important;
+  }
+  .ctc-ig-handle { font-size: 20px !important; }
+
+  /* HEADER LOGO */
+  #masthead .site-logo img { max-height: 60px !important; }
+}
+
+@media (max-width: 480px) {
+
+  /* HERO — very small phones */
+  .ctc-h1 { font-size: 40px !important; }
+  .ctc-script { font-size: 28px !important; }
+  .ctc-hero-content { padding: 80px 18px 48px !important; }
+
+  /* Instagram — 2 cols on small phones */
+  .ctc-iggrid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Nav — hide text labels, just show logo */
+  .main-header-menu a {
+    font-size: 9px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .ctc-section { padding: 48px 18px !important; }
+  .ctc-stitle { font-size: 36px !important; }
+  .ctc-banner-title { font-size: 38px !important; }
+}
+/* Black background for single post page */
+.single-post .site-main,
+.single-post #page,
+.single-post .ast-article-single,
+.single-post #content {
+  background: #111111 !important;
+}
+body.single-post {
+  background-color: #111111 !important;
+}
+/* Fix CTC style cards — remove blue underline */
+.ctc-style-card,
+.ctc-style-card:hover,
+.ctc-style-card *,
+.ctc-dc,
+.ctc-dc:hover,
+.ctc-dc * {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.ctc-style-title {
+  color: #ffffff !important;
+}
+
+.ctc-style-desc {
+  color: #888888 !important;
+}
+
+.ctc-style-count {
+  color: #8A6F3E !important;
+}
+
+.ctc-style-icon {
+  color: #C9A86C !important;
+}
+/* Fix Blog page hero top cut-off */
+.ctc-blog-hero-content {
+  padding-top: 120px !important;
+}
+/* Fix ALL ctc links globally */
+.ctc-wrap a,
+.ctc-wrap a:hover,
+.ctc-wrap a * {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Fix white header gap on all inner pages */
+.ast-page-builder-template .entry-header,
+.ast-no-thumbnail.ast-header-without-markup,
+.entry-header.ast-no-thumbnail,
+.ast-article-single .entry-header {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+/* Remove white background on all pages */
+.ast-page-builder-template,
+.ast-plain-container {
+  background-color: #111111 !important;
+}
+/* Fix Shop page hero top padding */
+.ctc-hero-content {
+  padding-top: 200px !important;
+}
+/* Fix hero top padding on ALL inner pages */
+.ctc-hero-content,
+.ctc-blog-hero-content,
+.ctc-contact-hero-content,
+.ctc-about-hero-content,
+.ctc-dest-hero-content {
+  padding-top: 200px !important;
+}
+/* Fix post navigation colours */
+.post-navigation .nav-previous a,
+.post-navigation .nav-next a,
+.ast-single-post-order .nav-previous a,
+.ast-single-post-order .nav-next a {
+  color: #C9A86C !important;
+  text-decoration: none !important;
+}
+
+.post-navigation .nav-previous a:hover,
+.post-navigation .nav-next a:hover {
+  color: #EDD9A3 !important;
+}
+
+/* Hide it entirely if you don't want prev/next at all */
+/* .post-navigation { display: none !important; } */
+/* CTC Contact Page — Fix Astra blue icon override */
+.ct-contact-link,
+.ct-contact-link:visited,
+.ct-contact-link * {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.ct-contact-link-icon {
+  color: var(--gold) !important;
+}		
